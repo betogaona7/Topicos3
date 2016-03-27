@@ -66,6 +66,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FORMS\FRM_articulos.Designer.vb">
+      <DependentUpon>FRM_articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMS\FRM_cliente.Designer.vb">
       <DependentUpon>FRM_cliente.vb</DependentUpon>
     </Compile>
@@ -82,6 +88,12 @@
       <DependentUpon>FRM_login.vb</DependentUpon>
     </Compile>
     <Compile Include="FORMS\FRM_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FRM_ordencompra.Designer.vb">
+      <DependentUpon>FRM_ordencompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_ordencompra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -101,6 +113,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FORMS\FRM_articulos.resx">
+      <DependentUpon>FRM_articulos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_cliente.resx">
       <DependentUpon>FRM_cliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_login.resx">
       <DependentUpon>FRM_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_ordencompra.resx">
+      <DependentUpon>FRM_ordencompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

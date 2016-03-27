@@ -1,41 +1,42 @@
-﻿Public Class FRM_cliente
+﻿Public Class FRM_articulos
 
     Dim bnuevo As Boolean
 
-    Private Sub FRM_cliente_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FRM_articulos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Limpiar()
         Me.dgFormat()
     End Sub
 
     Private Sub Limpiar()
         Me.TXT_id.Text = ""
-        Me.TXT_cliente.Text = ""
+        Me.TXT_articulo.Text = ""
         Me.BTN_nuevo.Enabled = True
         Me.BTN_eliminar.Enabled = False
         Me.BTN_guardar.Enabled = False
         bnuevo = False
     End Sub
 
+
 #Region "Validacion de campos"
-    'Validacion de Id cliente
-    Private Sub TXT_id_Validated(sender As Object, e As System.EventArgs) Handles TXT_id.Validated
+    'Validacion de ID articulo 
+    Private Sub TXT_id_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles TXT_id.Validated
         If Me.TXT_id.Text <> "" And bnuevo <> True Then
             Me.mDepartamento.IdDepartamento = CInt(Me.TXT_id.Text)
             If Me.mDepartamento.GetDB() Then
                 Me.TXT_id.Text = Me.mDepartamento.IdDepartamento
-                Me.TXT_cliente.Text = Me.mDepartamento.Departamento
+                Me.TXT_articuloText = Me.mDepartamento.Departamento
                 bnuevo = False
                 Me.BTN_guardar.Enabled = True
                 Me.BTN_eliminar.Enabled = True
                 Me.BTN_nuevo.Enabled = False
-                Me.TXT_cliente.Focus()
+                Me.TXT_articulo.Focus()
             Else
                 MsgBox("Registro no existe... ", MsgBoxStyle.Information, "Aviso")
             End If
         End If
     End Sub
 
-    'Validacion de Id cliente keypress
+    'Validacion de Id articulo Key press 
     Private Sub TXT_id_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_id.KeyPress
         e.KeyChar = UCase(e.KeyChar)
         If e.KeyChar = ChrW(Keys.Enter) Then
@@ -44,8 +45,8 @@
         End If
     End Sub
 
-    'Validacion de TXT_cliente keypress 
-    Private Sub TXT_cliente_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_cliente.KeyPress
+    'Validacion de TXT_articulo keypress
+    Private Sub TXT_articulo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_articulo.KeyPress
         e.KeyChar = UCase(e.KeyChar)
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
@@ -63,13 +64,13 @@
         Me.BTN_nuevo.Enabled = False
         Me.BTN_guardar.Enabled = True
         Me.BTN_eliminar.Enabled = True
-        Me.TXT_cliente.Focus()
+        Me.TXT_articulo.Focus()
     End Sub
 
     Private Sub BTN_guardar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_guardar.Click
-        If Me.TXT_id.Text <> "" And Me.TXT_cliente.Text <> "" Then
+        If Me.TXT_id.Text <> "" And Me.TXT_articulo.Text <> "" Then
             Me.mDepartamento.IdDepartamento = CInt(Val(Me.TXT_id.Text))
-            Me.mDepartamento.Departamento = Me.TXT_cliente.Text
+            Me.mDepartamento.Departamento = Me.TXT_articulo.Text
             If bnuevo = True Then
                 Me.mDepartamento.Activo = 1
                 Me.mDepartamento.insertDB()
@@ -92,7 +93,7 @@
         If Me.TXT_id.Text <> "" Then
             Me.mDepartamento.IdDepartamento = CInt(Me.TXT_id.Text)
             Me.mDepartamento.GetDB()
-            If MsgBox("Desea Eliminar El Registro " & Me.TXT_cliente.Text, vbYesNo, "Confirmar") = vbYes Then
+            If MsgBox("Desea Eliminar El Registro " & Me.TXT_articulo.Text, vbYesNo, "Confirmar") = vbYes Then
                 If Me.mDepartamento.Activo = 0 Then
                     If MsgBox("El Registro Esta Cancelado, Desea Activarlo", vbYesNo, "Confirmar") = vbYes Then
                         Me.mDepartamento.UpdateCancela(1)
@@ -145,10 +146,9 @@
 #End Region
 
 #Region "Gid"
-
     Private Sub dgFormat()
-        Me.DGV_cliente.DataSource = Me.mDepartamento.Fill_Grid()
-        Me.DGV_cliente.Refresh()
+        Me.DGV_articulo.DataSource = Me.mDepartamento.Fill_Grid()
+        Me.DGV_articulo.Refresh()
         'Me.DGV_departamento.Columns(0).HeaderText = "Id"
         'Me.DGV_departamento.Columns(1).HeaderText = "Nombre"
         'Me.DGV_departamento.Columns(0).Visible = False
@@ -156,21 +156,20 @@
         'Me.DGV_departamento.Columns(1).Width = 220
         'Me.DGV_departamento.Columns(2).Visible = False
         'Me.DGV_departamento.Columns(7).Visible = False
-        Me.DGV_cliente.Focus()
+        Me.DGV_articulo.Focus()
     End Sub
 
     'Selecciona el registro marcado del grid
-    Private Sub DGV_cliente_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles DGV_cliente.KeyDown
+    Private Sub DGV_articulo_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles DGV_articulo.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.KeyValue.ToString()
-            Me.TXT_id.Text = Me.DGV_cliente.CurrentRow.Cells(0).Value
+            Me.TXT_id.Text = Me.DGV_articulo.CurrentRow.Cells(0).Value
             Me.TXT_id_Validated(sender, e)
             bnuevo = False
             Me.BTN_guardar.Enabled = True
             Me.BTN_nuevo.Enabled = False
         End If
     End Sub
-    
 #End Region
 
     

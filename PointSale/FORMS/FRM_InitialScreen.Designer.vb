@@ -43,8 +43,7 @@ Partial Class FRM_InitialScreen
         Me.TSM_articulo = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSM_orden = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PorFechasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSM_reportePorFecha = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -173,22 +172,16 @@ Partial Class FRM_InitialScreen
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorRegistroToolStripMenuItem, Me.PorFechasToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_reportePorFecha})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes "
         '
-        'PorRegistroToolStripMenuItem
+        'TSM_reportePorFecha
         '
-        Me.PorRegistroToolStripMenuItem.Name = "PorRegistroToolStripMenuItem"
-        Me.PorRegistroToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
-        Me.PorRegistroToolStripMenuItem.Text = "Por registro"
-        '
-        'PorFechasToolStripMenuItem
-        '
-        Me.PorFechasToolStripMenuItem.Name = "PorFechasToolStripMenuItem"
-        Me.PorFechasToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
-        Me.PorFechasToolStripMenuItem.Text = "Por fechas"
+        Me.TSM_reportePorFecha.Name = "TSM_reportePorFecha"
+        Me.TSM_reportePorFecha.Size = New System.Drawing.Size(152, 22)
+        Me.TSM_reportePorFecha.Text = "Por fechas"
         '
         'StatusStrip
         '
@@ -245,8 +238,7 @@ Partial Class FRM_InitialScreen
     Friend WithEvents SaveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PorRegistroToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PorFechasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSM_reportePorFecha As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OperacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSM_cliente As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSM_articulo As System.Windows.Forms.ToolStripMenuItem

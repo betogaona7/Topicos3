@@ -9,3 +9,5 @@ C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_cliente.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_articulos.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_ordencompra.resources

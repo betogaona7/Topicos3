@@ -81,9 +81,32 @@ Public Class FRM_InitialScreen
     Private Sub FRM_InitialScreen_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private frmOpen As Form
+
+    Private Sub CloseWindow(ByVal pFrm As Form)
+        If (frmOpen Is Nothing) Then
+            frmOpen = pFrm
+        Else
+            frmOpen.Close()
+            frmOpen = pFrm
+        End If
+    End Sub
+
+
     '-------------------------------------------------------------------
     Private Sub TSM_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_cliente.Click
         FRM_cliente.MdiParent = Me
         FRM_cliente.Show()
+    End Sub
+
+    Private Sub TSM_articulo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_articulo.Click
+        FRM_articulos.MdiParent = Me
+        FRM_articulos.Show()
+    End Sub
+
+    Private Sub TSM_orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_orden.Click
+        FRM_ordencompra.MdiParent = Me
+        FRM_ordencompra.Show()
     End Sub
 End Class
