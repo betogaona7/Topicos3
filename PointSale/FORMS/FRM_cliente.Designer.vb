@@ -160,6 +160,7 @@ Partial Class FRM_cliente
         Me.Controls.Add(Me.BTN_guardar)
         Me.Controls.Add(Me.BTN_nuevo)
         Me.Controls.Add(Me.DataGridView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_cliente"
         Me.Text = "Cliente"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

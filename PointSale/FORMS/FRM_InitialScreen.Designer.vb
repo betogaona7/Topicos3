@@ -38,16 +38,16 @@ Partial Class FRM_InitialScreen
         Me.PrintSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.OperacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSM_cliente = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSM_articulo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSM_orden = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorRegistroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorFechasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OperacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ArticuloToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -57,7 +57,7 @@ Partial Class FRM_InitialScreen
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.OperacionesToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(759, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -146,20 +146,30 @@ Partial Class FRM_InitialScreen
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ExitToolStripMenuItem.Text = "&Salir"
         '
-        'StatusStrip
+        'OperacionesToolStripMenuItem
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
-        Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
-        Me.StatusStrip.TabIndex = 7
-        Me.StatusStrip.Text = "StatusStrip"
+        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_cliente, Me.TSM_articulo, Me.TSM_orden})
+        Me.OperacionesToolStripMenuItem.Name = "OperacionesToolStripMenuItem"
+        Me.OperacionesToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
+        Me.OperacionesToolStripMenuItem.Text = "Operaciones"
         '
-        'ToolStripStatusLabel
+        'TSM_cliente
         '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
-        Me.ToolStripStatusLabel.Text = "Estado"
+        Me.TSM_cliente.Name = "TSM_cliente"
+        Me.TSM_cliente.Size = New System.Drawing.Size(169, 22)
+        Me.TSM_cliente.Text = "Cliente"
+        '
+        'TSM_articulo
+        '
+        Me.TSM_articulo.Name = "TSM_articulo"
+        Me.TSM_articulo.Size = New System.Drawing.Size(169, 22)
+        Me.TSM_articulo.Text = "Articulo"
+        '
+        'TSM_orden
+        '
+        Me.TSM_orden.Name = "TSM_orden"
+        Me.TSM_orden.Size = New System.Drawing.Size(169, 22)
+        Me.TSM_orden.Text = "Orden de Compra"
         '
         'ReportesToolStripMenuItem
         '
@@ -171,49 +181,43 @@ Partial Class FRM_InitialScreen
         'PorRegistroToolStripMenuItem
         '
         Me.PorRegistroToolStripMenuItem.Name = "PorRegistroToolStripMenuItem"
-        Me.PorRegistroToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PorRegistroToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.PorRegistroToolStripMenuItem.Text = "Por registro"
         '
         'PorFechasToolStripMenuItem
         '
         Me.PorFechasToolStripMenuItem.Name = "PorFechasToolStripMenuItem"
-        Me.PorFechasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PorFechasToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.PorFechasToolStripMenuItem.Text = "Por fechas"
         '
-        'OperacionesToolStripMenuItem
+        'StatusStrip
         '
-        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.ArticuloToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem})
-        Me.OperacionesToolStripMenuItem.Name = "OperacionesToolStripMenuItem"
-        Me.OperacionesToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
-        Me.OperacionesToolStripMenuItem.Text = "Operaciones"
+        Me.StatusStrip.AutoSize = False
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 422)
+        Me.StatusStrip.Name = "StatusStrip"
+        Me.StatusStrip.Size = New System.Drawing.Size(759, 22)
+        Me.StatusStrip.TabIndex = 7
+        Me.StatusStrip.Text = "StatusStrip"
         '
-        'ClienteToolStripMenuItem
+        'ToolStripStatusLabel
         '
-        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
-        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.ClienteToolStripMenuItem.Text = "Cliente"
-        '
-        'ArticuloToolStripMenuItem
-        '
-        Me.ArticuloToolStripMenuItem.Name = "ArticuloToolStripMenuItem"
-        Me.ArticuloToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.ArticuloToolStripMenuItem.Text = "Articulo"
-        '
-        'OrdenDeCompraToolStripMenuItem
-        '
-        Me.OrdenDeCompraToolStripMenuItem.Name = "OrdenDeCompraToolStripMenuItem"
-        Me.OrdenDeCompraToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.OrdenDeCompraToolStripMenuItem.Text = "Orden de Compra"
+        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
+        Me.ToolStripStatusLabel.Text = "Estado"
         '
         'FRM_InitialScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(759, 444)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
+        Me.MaximizeBox = False
         Me.Name = "FRM_InitialScreen"
         Me.Text = "Point Sale"
         Me.MenuStrip.ResumeLayout(False)
@@ -244,8 +248,8 @@ Partial Class FRM_InitialScreen
     Friend WithEvents PorRegistroToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PorFechasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OperacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ArticuloToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OrdenDeCompraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSM_cliente As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSM_articulo As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSM_orden As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -8,3 +8,4 @@ C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_cliente.resources

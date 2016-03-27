@@ -81,4 +81,9 @@ Public Class FRM_InitialScreen
     Private Sub FRM_InitialScreen_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
+    '-------------------------------------------------------------------
+    Private Sub TSM_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_cliente.Click
+        FRM_cliente.MdiParent = Me
+        FRM_cliente.Show()
+    End Sub
 End Class
