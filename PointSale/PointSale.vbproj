@@ -66,6 +66,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FORMS\FRM_cliente.Designer.vb">
+      <DependentUpon>FRM_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMS\FRM_InitialScreen.Designer.vb">
       <DependentUpon>FRM_InitialScreen.vb</DependentUpon>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FORMS\FRM_cliente.resx">
+      <DependentUpon>FRM_cliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_InitialScreen.resx">
       <DependentUpon>FRM_InitialScreen.vb</DependentUpon>
     </EmbeddedResource>
