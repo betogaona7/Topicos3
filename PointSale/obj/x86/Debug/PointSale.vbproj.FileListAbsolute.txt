@@ -9,5 +9,12 @@ C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_cliente.resources
+<<<<<<< HEAD
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_articulos.resources
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_ordencompra.resources
+=======
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
+>>>>>>> a0dd83356d24f9ef4d3f4b390df8f35ffe0c88c0
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.exe.config
