@@ -9,3 +9,6 @@ C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
 C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_cliente.resources
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
+C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
