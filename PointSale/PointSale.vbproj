@@ -72,6 +72,12 @@
     <Compile Include="FORMS\FRM_InitialScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMS\FRM_login.Designer.vb">
+      <DependentUpon>FRM_login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -91,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMS\FRM_InitialScreen.resx">
       <DependentUpon>FRM_InitialScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_login.resx">
+      <DependentUpon>FRM_login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

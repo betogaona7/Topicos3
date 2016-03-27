@@ -1,0 +1,10 @@
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_InitialScreen.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_login.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.Resources.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.vbproj.GenerateResource.Cache
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.exe
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.pdb
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.xml
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.exe
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.xml
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
