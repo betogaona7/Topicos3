@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9B42AABA-E44A-4C59-8C72-7B529957F5C3}</ProjectGuid>
+    <ProjectGuid>{5AAF02D3-992A-41F0-85B6-4B9E6FB3189C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>PointSale.My.MyApplication</StartupObject>
-    <RootNamespace>PointSale</RootNamespace>
-    <AssemblyName>PointSale</AssemblyName>
+    <StartupObject>Topicos2.My.MyApplication</StartupObject>
+    <RootNamespace>Topicos2</RootNamespace>
+    <AssemblyName>Topicos2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>PointSale.xml</DocumentationFile>
+    <DocumentationFile>Topicos2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>PointSale.xml</DocumentationFile>
+    <DocumentationFile>Topicos2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,17 +48,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -73,10 +66,10 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FORMS\FRM_articulos.Designer.vb">
-      <DependentUpon>FRM_articulos.vb</DependentUpon>
+    <Compile Include="FORMS\FRM_articulo.Designer.vb">
+      <DependentUpon>FRM_articulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\FRM_articulos.vb">
+    <Compile Include="FORMS\FRM_articulo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\FRM_cliente.Designer.vb">
@@ -85,33 +78,27 @@
     <Compile Include="FORMS\FRM_cliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\FRM_InitialScreen.Designer.vb">
-      <DependentUpon>FRM_InitialScreen.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\FRM_InitialScreen.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\FRM_login.Designer.vb">
-      <DependentUpon>FRM_login.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\FRM_login.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\FRM_ordencompra.Designer.vb">
-      <DependentUpon>FRM_ordencompra.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\FRM_ordencompra.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FORMS\FRM_reporte.Designer.vb">
       <DependentUpon>FRM_reporte.vb</DependentUpon>
     </Compile>
     <Compile Include="FORMS\FRM_reporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIC\CLS_cliente.vb" />
-    <Compile Include="LOGIC\dbSQL.vb" />
-    <Compile Include="LOGIC\mGeneral.vb" />
+    <Compile Include="LOGICA\CLS_articulo.vb" />
+    <Compile Include="LOGICA\CLS_usuario.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FRM_Usuario.Designer.vb">
+      <DependentUpon>FRM_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -127,30 +114,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="REPORTS\DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FORMS\FRM_articulos.resx">
-      <DependentUpon>FRM_articulos.vb</DependentUpon>
+    <EmbeddedResource Include="FORMS\FRM_articulo.resx">
+      <DependentUpon>FRM_articulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_cliente.resx">
       <DependentUpon>FRM_cliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_InitialScreen.resx">
-      <DependentUpon>FRM_InitialScreen.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_login.resx">
-      <DependentUpon>FRM_login.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_ordencompra.resx">
-      <DependentUpon>FRM_ordencompra.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_reporte.resx">
-      <DependentUpon>FRM_reporte.vb</DependentUpon>
+    <EmbeddedResource Include="FORMS\FRM_Usuario.resx">
+      <DependentUpon>FRM_Usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -160,9 +133,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -172,21 +142,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="REPORTS\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="REPORTS\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="REPORTS\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <Folder Include="REPORTES\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
