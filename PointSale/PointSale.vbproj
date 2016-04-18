@@ -79,10 +79,10 @@
     <Compile Include="FORMS\FRM_articulos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\FRM_cliente.Designer.vb">
-      <DependentUpon>FRM_cliente.vb</DependentUpon>
+    <Compile Include="FORMS\FRM_proveedor.Designer.vb">
+      <DependentUpon>FRM_proveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\FRM_cliente.vb">
+    <Compile Include="FORMS\FRM_proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\FRM_InitialScreen.Designer.vb">
@@ -109,7 +109,7 @@
     <Compile Include="FORMS\FRM_reporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIC\CLS_cliente.vb" />
+    <Compile Include="LOGIC\CLS_proveedor.vb" />
     <Compile Include="LOGIC\dbSQL.vb" />
     <Compile Include="LOGIC\mGeneral.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -137,8 +137,8 @@
     <EmbeddedResource Include="FORMS\FRM_articulos.resx">
       <DependentUpon>FRM_articulos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_cliente.resx">
-      <DependentUpon>FRM_cliente.vb</DependentUpon>
+    <EmbeddedResource Include="FORMS\FRM_proveedor.resx">
+      <DependentUpon>FRM_proveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_InitialScreen.resx">
       <DependentUpon>FRM_InitialScreen.vb</DependentUpon>

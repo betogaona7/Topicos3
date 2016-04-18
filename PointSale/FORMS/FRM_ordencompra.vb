@@ -8,7 +8,7 @@
 
     Private Sub Limpiar()
         Me.TXT_id.Text = ""
-        Me.TXT_orden.Text = ""
+        'Me.TXT_orden.Text = ""
         Me.BTN_nuevo.Enabled = True
         Me.BTN_eliminar.Enabled = False
         Me.BTN_guardar.Enabled = False
@@ -18,7 +18,7 @@
 #Region "Validacion de campos"
 
     'Validacion de ID orden
-    Private Sub TXT_id_Validated(sender As Object, e As System.EventArgs) Handles TXT_id.Validated
+    Private Sub TXT_id_Validated(sender As Object, e As System.EventArgs)
         If Me.TXT_id.Text <> "" And bnuevo <> True Then
             Me.mDepartamento.IdDepartamento = CInt(Me.TXT_id.Text)
             If Me.mDepartamento.GetDB() Then
@@ -35,7 +35,7 @@
     End Sub
 
     'Validacion de ID orden keypress 
-    Private Sub TXT_id_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_id.KeyPress
+    Private Sub TXT_id_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
         e.KeyChar = UCase(e.KeyChar)
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
@@ -44,7 +44,7 @@
     End Sub
 
     'Validacion de TXT_orden keypress 
-    Private Sub TXT_orden_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_orden.KeyPress
+    Private Sub TXT_orden_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
         e.KeyChar = UCase(e.KeyChar)
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
@@ -171,5 +171,4 @@
 
 #End Region
 
-    
 End Class
