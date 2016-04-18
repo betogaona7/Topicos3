@@ -158,14 +158,13 @@
         xDT = xCnx.DTQuery(StrSql)
         If xDT.Rows.Count = 1 Then
             GetDB = True
-            _IdProveedor = CInt(xDT.Rows(0)("IdProve"))
+            _IdProveedor = CInt(xDT.Rows(0)("IdProveedor"))
             _Nombre = CStr(xDT.Rows(0)("Nombre"))
             _RFC = CStr(xDT.Rows(0)("RFC"))
             _Calle = CStr(xDT.Rows(0)("Calle"))
             _Numero = CInt(xDT.Rows(0)("Numero"))
             _Colonia = CStr(xDT.Rows(0)("Colonia"))
             _Estado = CStr(xDT.Rows(0)("Estado"))
-            _Municipio = CStr(xDT.Rows(0)("Municipio"))
             _Ciudad = CStr(xDT.Rows(0)("Ciudad"))
             _CodigoPostal = CStr(xDT.Rows(0)("CodigoPostal"))
             _Activo = CInt(xDT.Rows(0)("Activo"))
@@ -175,27 +174,26 @@
     'Actualiza activo'
     Public Sub UpdCancela(ByVal mactivo As Integer)
         StrSql = "UPDATE " & N_Tabla & " set Activo= " & mactivo
-        StrSql = StrSql & " WHERE IdCliente=" & _IdCliente
+        StrSql = StrSql & " WHERE IdProveedor =" & _IdProveedor
         xCnx.NonQuery(StrSql)
     End Sub
 
     'Valida que no existan nombres duplicados'
     Function valida(ByVal MBusca As String) As Boolean
-        StrSql = "SELECT IdCliente,Nombre,RFC,Calle,Numero,Colonia,Estado,Municipio,Ciudad,CodigoPostal,Activo "
+        StrSql = "SELECT IdProveedor, Nombre, RFC, Calle, Numero, Colonia, Estado, Ciudad, CodigoPostal, Activo "
         StrSql = StrSql & " FROM " & N_Tabla
         StrSql = StrSql & " WHERE Nombre='" & MBusca & "'"
         valida = False
         xDT = xCnx.DTQuery(StrSql)
         If xDT.Rows.Count >= 1 Then
             valida = True
-            _IdCliente = CInt(xDT.Rows(0)("IdCliente"))
+            _IdProveedor = CInt(xDT.Rows(0)("IdProveedor"))
             _Nombre = CStr(xDT.Rows(0)("Nombre"))
             _RFC = CStr(xDT.Rows(0)("RFC"))
             _Calle = CStr(xDT.Rows(0)("Calle"))
             _Numero = CInt(xDT.Rows(0)("Numero"))
             _Colonia = CStr(xDT.Rows(0)("Colonia"))
             _Estado = CStr(xDT.Rows(0)("Estado"))
-            _Municipio = CStr(xDT.Rows(0)("Municipio"))
             _Ciudad = CStr(xDT.Rows(0)("Ciudad"))
             _CodigoPostal = CStr(xDT.Rows(0)("CodigoPostal"))
             _Activo = CInt(xDT.Rows(0)("Activo"))
@@ -203,7 +201,7 @@
     End Function
 
     Function Fill_Grid() As Object
-        StrSql = "SELECT IdCliente,Nombre,RFC,Calle,Numero,Colonia,Estado,Municipio,Ciudad,CodigoPostal, "
+        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,Estado,Ciudad,CodigoPostal, "
         StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then "
         StrSql = StrSql & " 'Baja' end Activo"
         StrSql = StrSql & " FROM " & N_Tabla
@@ -211,21 +209,22 @@
     End Function
 
     Function Load_Combo() As DataTable
-        StrSql = "SELECT IdCliente,Nombre,RFC,Calle,Numero,Colonia,Estado,Municipio,Ciudad,CodigoPostal, FROM " & N_Tabla
+        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,Estado,Ciudad,CodigoPostal, FROM " & N_Tabla
         StrSql = StrSql & " WHERE Activo = 1 Order by Nombre"
         Load_Combo = xCnx.DTQuery(StrSql)
     End Function
     'Sacar informacion de la tabla si esta activo'
     Function Rpt(ByVal Mbusca As Integer) As DataTable
-        StrSql = "SELECT IdCliente,Nombre,RFC,Calle,Numero,Colonia,Estado,Municipio,Ciudad,CodigoPostal, "
+        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,Estado,Ciudad,CodigoPostal, "
         StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 "
         StrSql = StrSql & " then 'Baja' end Activo"
         StrSql = StrSql & " FROM " & N_Tabla
         If Mbusca <> 0 Then
-            StrSql = StrSql & " Where IdCliente=" & Mbusca
+            StrSql = StrSql & " Where IdProveedor=" & Mbusca
         End If
         StrSql = StrSql & " Order by Nombre "
         Rpt = xCnx.DTQuery(StrSql)
     End Function
 #End Region
+
 End Class

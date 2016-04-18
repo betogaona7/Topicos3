@@ -79,6 +79,12 @@
     <Compile Include="FORMS\FRM_articulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMS\FRM_exportaProveedor.Designer.vb">
+      <DependentUpon>FRM_exportaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_exportaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMS\FRM_proveedor.Designer.vb">
       <DependentUpon>FRM_proveedor.vb</DependentUpon>
     </Compile>
@@ -132,10 +138,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="REPORTS\RPT_proveedor.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_proveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FORMS\FRM_articulos.resx">
       <DependentUpon>FRM_articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_exportaProveedor.resx">
+      <DependentUpon>FRM_exportaProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_proveedor.resx">
       <DependentUpon>FRM_proveedor.vb</DependentUpon>
@@ -157,6 +172,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTS\RPT_proveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_proveedor.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
