@@ -237,7 +237,7 @@
 
     'Exporta
     Private Sub BTN_exportar_Click(sender As System.Object, e As System.EventArgs)
-        FRM_exportaProveedor.Load_Data(DGV_proveedor)
+        FRM_exportar.Load_Data(DGV_proveedor)
     End Sub
 
     'Salir

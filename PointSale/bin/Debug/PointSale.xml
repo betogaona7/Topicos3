@@ -6,7 +6,71 @@ PointSale
 </name>
 </assembly>
 <members>
-<member name="P:PointSale.My.Resources.Resources.ResourceManager">
+<member name="T:PointSale.DataSet1.ArticuloDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCDetalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PointSale.DataSet1.ProveedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PointSale.DataSet1.UsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PointSale.DataSet1.ArticuloRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCDetalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PointSale.DataSet1.ProveedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PointSale.DataSet1.UsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PointSale.DataSet1.ArticuloRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PointSale.DataSet1.OdeCDetalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PointSale.DataSet1.ProveedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PointSale.DataSet1.UsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PointSale.DataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:PointSale.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>

@@ -18,3 +18,13 @@ C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86
 C:\Users\Monica\Documents\Visual Studio 2010\Projects\Topicos3\PointSale\obj\x86\Debug\PointSale.pdb
 >>>>>>> a0dd83356d24f9ef4d3f4b390df8f35ffe0c88c0
 C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\PointSale.exe.config
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.vbprojResolveAssemblyReference.cache
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_exportaProveedor.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_proveedor.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_reporte.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_exportar.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\office.dll
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\Microsoft.Office.Interop.Excel.xml
+C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\office.xml

@@ -1,7 +1,7 @@
 ﻿Imports System.Data
 Imports System.IO
 
-Public Class FRM_exportaProveedor
+Public Class FRM_exportar
 
     Private Sub FRM_exportaProveedor_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 

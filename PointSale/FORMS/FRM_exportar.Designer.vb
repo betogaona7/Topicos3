@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FRM_exportaProveedor
+Partial Class FRM_exportar
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -54,7 +54,7 @@ Partial Class FRM_exportaProveedor
         Me.dg1.Size = New System.Drawing.Size(597, 359)
         Me.dg1.TabIndex = 3
         '
-        'FRM_exportaProveedor
+        'FRM_exportar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -62,8 +62,8 @@ Partial Class FRM_exportaProveedor
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnExporta)
         Me.Controls.Add(Me.dg1)
-        Me.Name = "FRM_exportaProveedor"
-        Me.Text = "FRM_exportaProveedor"
+        Me.Name = "FRM_exportar"
+        Me.Text = "Exportar"
         CType(Me.dg1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
