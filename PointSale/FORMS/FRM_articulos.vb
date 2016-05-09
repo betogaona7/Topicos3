@@ -1,11 +1,13 @@
 ﻿Public Class FRM_articulos
 
     Dim mArticulo As New CLS_articulos
+
     Dim IdArticulo As Integer
     Dim Codigo As String
     Dim Descripcion As String
     Dim Precio As Double
     Dim Costo As Double
+
     Dim bnuevo As Boolean
 
 
@@ -169,12 +171,13 @@
         dtDatos = Me.mArticulo.Rpt(0)
         If dtDatos.Rows.Count <> 0 Then
             ''asigno el nombre del reporte
-            Dim orptprueba As New RPT_articulo()
+            Dim orpt As New RPT_articulo()
             ''le paso al reporte el data table
-            orptprueba.SetDataSource(dtDatos)
+            orpt.SetDataSource(dtDatos)
+
             ''llamo reporte
             Dim m As New FRM_reporte
-            m.CrystalReportViewer1.ReportSource = orptprueba
+            m.CrystalReportViewer1.ReportSource = orpt
             m.ShowDialog()
             ''fin codigo nvo
         Else

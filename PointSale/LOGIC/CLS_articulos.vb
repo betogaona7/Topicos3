@@ -92,7 +92,7 @@
     Public Sub insertDB()
         Me.New_IdArticulo()
         StrSql = "INSERT INTO " & N_Tabla & " (IdArticulo,Codigo,Descripcion,Precio,Costo,Activo) "
-        StrSql = StrSql & " VALUES(" & _IdArticulo & ",'" & _Codigo & "','" & _Descripcion & "'," & _Precio & ",'" & _Costo & "','"
+        StrSql = StrSql & " VALUES(" & _IdArticulo & ",'" & _Codigo & "','" & _Descripcion & "'," & _Precio & "," & _Costo & ","
         StrSql = StrSql & Activo & ")"
         xCnx.NonQuery(StrSql)
     End Sub
@@ -102,7 +102,7 @@
         StrSql = "UPDATE " & N_Tabla & " set Codigo='" & _Codigo & "',"
         StrSql = StrSql & " Descripcion='" & _Descripcion & "',"
         StrSql = StrSql & " Precio=" & _Precio & ","
-        StrSql = StrSql & " Costo='" & _Costo & "'"
+        StrSql = StrSql & " Costo=" & _Costo & " "
         StrSql = StrSql & " WHERE IdArticulo=" & _IdArticulo
         xCnx.NonQuery(StrSql)
     End Sub
