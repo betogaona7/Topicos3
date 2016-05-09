@@ -30,7 +30,7 @@ Partial Class FRM_exportar
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(636, 219)
+        Me.btnSalir.Location = New System.Drawing.Point(750, 230)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 5
@@ -39,7 +39,7 @@ Partial Class FRM_exportar
         '
         'btnExporta
         '
-        Me.btnExporta.Location = New System.Drawing.Point(636, 177)
+        Me.btnExporta.Location = New System.Drawing.Point(750, 191)
         Me.btnExporta.Name = "btnExporta"
         Me.btnExporta.Size = New System.Drawing.Size(75, 23)
         Me.btnExporta.TabIndex = 4
@@ -49,20 +49,23 @@ Partial Class FRM_exportar
         'dg1
         '
         Me.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg1.Location = New System.Drawing.Point(12, 32)
+        Me.dg1.Location = New System.Drawing.Point(23, 52)
         Me.dg1.Name = "dg1"
-        Me.dg1.Size = New System.Drawing.Size(597, 359)
+        Me.dg1.Size = New System.Drawing.Size(689, 359)
         Me.dg1.TabIndex = 3
         '
         'FRM_exportar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(728, 422)
+        Me.BackColor = System.Drawing.Color.SpringGreen
+        Me.ClientSize = New System.Drawing.Size(872, 471)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnExporta)
         Me.Controls.Add(Me.dg1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_exportar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Exportar"
         CType(Me.dg1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

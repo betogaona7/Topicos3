@@ -56,7 +56,7 @@ Partial Class FRM_InitialScreen
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.OperacionesToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(759, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(856, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -180,16 +180,16 @@ Partial Class FRM_InitialScreen
         'TSM_reportePorFecha
         '
         Me.TSM_reportePorFecha.Name = "TSM_reportePorFecha"
-        Me.TSM_reportePorFecha.Size = New System.Drawing.Size(152, 22)
+        Me.TSM_reportePorFecha.Size = New System.Drawing.Size(129, 22)
         Me.TSM_reportePorFecha.Text = "Por fechas"
         '
         'StatusStrip
         '
         Me.StatusStrip.AutoSize = False
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 422)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 410)
         Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(759, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(856, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -205,14 +205,15 @@ Partial Class FRM_InitialScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(759, 444)
+        Me.ClientSize = New System.Drawing.Size(856, 432)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.MaximizeBox = False
         Me.Name = "FRM_InitialScreen"
-        Me.Text = "Point Sale"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Punto de venta"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.StatusStrip.ResumeLayout(False)

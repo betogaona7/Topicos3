@@ -1,6 +1,7 @@
 ﻿Public Class FRM_proveedor
 
     Dim mProveedor As New CLS_proveedor
+
     Dim IdProveedor As Integer
     Dim Nombre As String
     Dim RFC As String
@@ -138,8 +139,8 @@
 #End Region
 
 #Region "Botones"
-    'Nuevo
-    Private Sub BTN_nuevo_Click(sender As System.Object, e As System.EventArgs)
+    'nuevo
+    Private Sub BTN_nuevo_Click(sender As System.Object, e As System.EventArgs) Handles BTN_nuevo.Click
         Me.Limpia()
 
         bnuevo = True
@@ -153,7 +154,7 @@
     End Sub
 
     'Guardar
-    Private Sub BTN_guardar_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub BTN_guardar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_guardar.Click
         If Me.TXT_id.Text <> "" And Me.TXT_nombre.Text <> "" And Me.TXT_rfc.Text <> "" And Me.TXT_calle.Text <> "" And Me.TXT_numero.Text <> "" And Me.TXT_cp.Text <> "" And Me.TXT_colonia.Text <> "" And Me.TXT_ciudad.Text <> "" And Me.TXT_estado.Text <> "" Then
             Me.mProveedor.IdProveedor = CInt(Val(Me.TXT_id.Text))
             Me.mProveedor.Nombre = Me.TXT_nombre.Text
@@ -185,7 +186,7 @@
     End Sub
 
     'Eliminar
-    Private Sub BTN_eliminar_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub BTN_eliminar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_eliminar.Click
         If Me.TXT_id.Text <> "" Then
             Me.mProveedor.IdProveedor = CInt(Me.TXT_id.Text)
             Me.mProveedor.GetDB()
@@ -209,12 +210,12 @@
     End Sub
 
     'Limpiar
-    Private Sub BTN_limpiar_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub BTN_limpiar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_limpiar.Click
         Me.Limpia()
     End Sub
 
     'Reporte
-    Private Sub BTN_reporte_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub BTN_reporte_Click(sender As System.Object, e As System.EventArgs) Handles BTN_reporte.Click
         Dim dtDatos As New DataTable
         ''lleno el data table
         dtDatos = Me.mProveedor.Rpt(0)
@@ -235,17 +236,15 @@
         Me.TXT_id.Focus()
     End Sub
 
-    'Exporta
-    Private Sub BTN_exportar_Click(sender As System.Object, e As System.EventArgs)
+    'Exportar
+    Private Sub BTN_exportar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_exportar.Click
         FRM_exportar.Load_Data(DGV_proveedor)
     End Sub
 
     'Salir
-    Private Sub BTN_salir_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub BTN_salir_Click(sender As System.Object, e As System.EventArgs) Handles BTN_salir.Click
         Me.Close()
     End Sub
-
-
 #End Region
 
 #Region "Grid"
@@ -267,10 +266,5 @@
         End If
     End Sub
 #End Region
-
-    'Falta termina el diseño del reporte RPT_proveedor
-    'Falta Arreglar el form de exportar FRM_exportaProveedor
-    'Falta correjir el diseño de todos los Forms
-    'Cambiar el orden en que se pasa por los Textbox dando un enter
 
 End Class

@@ -3,10 +3,6 @@ Imports System.IO
 
 Public Class FRM_exportar
 
-    Private Sub FRM_exportaProveedor_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Public Sub Load_Data(ByVal DG1 As DataGridView)
         GridAExcel(DG1)
         Me.Close()
