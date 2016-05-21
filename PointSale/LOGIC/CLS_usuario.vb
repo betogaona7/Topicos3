@@ -1,4 +1,5 @@
 ﻿Public Class CLS_usuario
+
 #Region "Declaracion de variables"
     'variables de conexion DB'
     Dim xCnx As New dbSQL
@@ -67,15 +68,15 @@
 #Region "Rutinas DATABASE"
 
     'Saca numero nuevo de Id'
-    Public Sub New_IdProveedor()
+    Public Sub New_IdUsuario()
         StrSql = "SELECT isnull(max(IdUsuario),0) FROM " & N_Tabla
         _IdUsuario = xCnx.ScalarQuery(StrSql) + 1
     End Sub
 
     'Insertar un registro'
     Public Sub insertDB()
-        Me.New_IdProveedor()
-        StrSql = "INSERT INTO " & N_Tabla & " (IdUsuario, Nombre, Login, Password,Activo) "
+        Me.New_IdUsuario()
+        StrSql = "INSERT INTO " & N_Tabla & " (IdUsuario,Nombre,Login,Password,Activo) "
         StrSql = StrSql & " VALUES(" & _IdUsuario & ",'" & _Nombre & "','" & _Login & "','" & _Password & "',"
         StrSql = StrSql & Activo & ")"
         xCnx.NonQuery(StrSql)
@@ -85,11 +86,10 @@
     Public Sub UpdateDB()
         StrSql = "UPDATE " & N_Tabla & " set Nombre='" & _Nombre & "',"
         StrSql = StrSql & " Login='" & _Login & "',"
-        StrSql = StrSql & " Password='" & _Password & "' "
+        StrSql = StrSql & " Password='" & _Password & "'"
         StrSql = StrSql & " WHERE IdUsuario=" & _IdUsuario
         xCnx.NonQuery(StrSql)
     End Sub
-    '''''''''''''''''''''''''''''''''''''''''''
 
     'Consulta en la base de datos si el registro existe y llena la clase'
     Function GetDB() As Boolean
@@ -104,6 +104,19 @@
             _Nombre = CStr(xDT.Rows(0)("Nombre"))
             _Login = CStr(xDT.Rows(0)("Login"))
             _Password = CStr(xDT.Rows(0)("Password"))
+            _Activo = CInt(xDT.Rows(0)("Activo"))
+        End If
+    End Function
+
+    'Consultar usuario y contraseña
+    Function GetDB2(ByVal user As String, ByVal password As String) As Boolean
+        StrSql = "SELECT Login, Password, Activo "
+        StrSql = StrSql & " FROM " & N_Tabla
+        StrSql = StrSql & " WHERE Login='" & user & "' AND Password='" & password & "'"
+        GetDB2 = False
+        xDT = xCnx.DTQuery(StrSql)
+        If xDT.Rows.Count = 1 Then
+            GetDB2 = True
             _Activo = CInt(xDT.Rows(0)("Activo"))
         End If
     End Function
@@ -152,5 +165,7 @@
         StrSql = StrSql & " Order by Nombre "
         Rpt = xCnx.DTQuery(StrSql)
     End Function
+
 #End Region
+
 End Class

@@ -16,15 +16,15 @@ Option Explicit On
 '''<summary>
 '''Represents a strongly typed in-memory cache of data.
 '''</summary>
-<Global.System.Serializable(),  _
- Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
- Global.System.ComponentModel.ToolboxItem(true),  _
- Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSet1"),  _
- Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
+<Global.System.Serializable(), _
+ Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+ Global.System.ComponentModel.ToolboxItem(True), _
+ Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"), _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSet1"), _
+ Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")> _
 Partial Public Class DataSet1
     Inherits Global.System.Data.DataSet
-    
+
     Private tableArticulo As ArticuloDataTable
 
     Private tableOdeC As OdeCDataTable
@@ -34,10 +34,6 @@ Partial Public Class DataSet1
     Private tableProveedor As ProveedorDataTable
 
     Private tableUsuario As UsuarioDataTable
-
-    Private relationOdeC_Proveedor As Global.System.Data.DataRelation
-
-    Private relationOdeC_OdeCDetalle As Global.System.Data.DataRelation
 
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
 
@@ -294,8 +290,6 @@ Partial Public Class DataSet1
                 Me.tableUsuario.InitVars()
             End If
         End If
-        Me.relationOdeC_Proveedor = Me.Relations("OdeC_Proveedor")
-        Me.relationOdeC_OdeCDetalle = Me.Relations("OdeC_OdeCDetalle")
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -316,10 +310,6 @@ Partial Public Class DataSet1
         MyBase.Tables.Add(Me.tableProveedor)
         Me.tableUsuario = New UsuarioDataTable()
         MyBase.Tables.Add(Me.tableUsuario)
-        Me.relationOdeC_Proveedor = New Global.System.Data.DataRelation("OdeC_Proveedor", New Global.System.Data.DataColumn() {Me.tableOdeC.IdProveedorColumn}, New Global.System.Data.DataColumn() {Me.tableProveedor.IdProveedorColumn}, False)
-        Me.Relations.Add(Me.relationOdeC_Proveedor)
-        Me.relationOdeC_OdeCDetalle = New Global.System.Data.DataRelation("OdeC_OdeCDetalle", New Global.System.Data.DataColumn() {Me.tableOdeC.IdOdeCColumn}, New Global.System.Data.DataColumn() {Me.tableOdeCDetalle.IdOdeCColumn}, False)
-        Me.Relations.Add(Me.relationOdeC_OdeCDetalle)
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -436,7 +426,7 @@ Partial Public Class DataSet1
 
         Private columnIdArticulo As Global.System.Data.DataColumn
 
-        Private columnNombre As Global.System.Data.DataColumn
+        Private columnCodigo As Global.System.Data.DataColumn
 
         Private columnDescripcion As Global.System.Data.DataColumn
 
@@ -491,9 +481,9 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property NombreColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CodigoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNombre
+                Return Me.columnCodigo
             End Get
         End Property
 
@@ -566,9 +556,9 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddArticuloRow(ByVal IdArticulo As Integer, ByVal Nombre As String, ByVal Descripcion As String, ByVal Precio As Integer, ByVal Costo As Integer, ByVal Activo As Integer) As ArticuloRow
+        Public Overloads Function AddArticuloRow(ByVal IdArticulo As Integer, ByVal Codigo As String, ByVal Descripcion As String, ByVal Precio As Double, ByVal Costo As Double, ByVal Activo As Integer) As ArticuloRow
             Dim rowArticuloRow As ArticuloRow = CType(Me.NewRow, ArticuloRow)
-            Dim columnValuesArray() As Object = New Object() {IdArticulo, Nombre, Descripcion, Precio, Costo, Activo}
+            Dim columnValuesArray() As Object = New Object() {IdArticulo, Codigo, Descripcion, Precio, Costo, Activo}
             rowArticuloRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowArticuloRow)
             Return rowArticuloRow
@@ -598,7 +588,7 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Sub InitVars()
             Me.columnIdArticulo = MyBase.Columns("IdArticulo")
-            Me.columnNombre = MyBase.Columns("Nombre")
+            Me.columnCodigo = MyBase.Columns("Codigo")
             Me.columnDescripcion = MyBase.Columns("Descripcion")
             Me.columnPrecio = MyBase.Columns("Precio")
             Me.columnCosto = MyBase.Columns("Costo")
@@ -610,17 +600,17 @@ Partial Public Class DataSet1
         Private Sub InitClass()
             Me.columnIdArticulo = New Global.System.Data.DataColumn("IdArticulo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIdArticulo)
-            Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombre)
+            Me.columnCodigo = New Global.System.Data.DataColumn("Codigo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigo)
             Me.columnDescripcion = New Global.System.Data.DataColumn("Descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescripcion)
-            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrecio)
-            Me.columnCosto = New Global.System.Data.DataColumn("Costo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnCosto = New Global.System.Data.DataColumn("Costo", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCosto)
             Me.columnActivo = New Global.System.Data.DataColumn("Activo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnActivo)
-            Me.columnNombre.MaxLength = 100
+            Me.columnCodigo.MaxLength = 10
             Me.columnDescripcion.MaxLength = 100
         End Sub
 
@@ -932,7 +922,7 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddOdeCRow(ByVal IdOdeC As Integer, ByVal IdProveedor As Integer, ByVal Folio As String, ByVal FechaOrden As String, ByVal SubTotal As Integer, ByVal Descuento As Integer, ByVal Impuesto As Integer, ByVal Total As Integer, ByVal Cancela As Integer, ByVal FechaDeCancelado As String) As OdeCRow
+        Public Overloads Function AddOdeCRow(ByVal IdOdeC As Integer, ByVal IdProveedor As Integer, ByVal Folio As String, ByVal FechaOrden As String, ByVal SubTotal As Double, ByVal Descuento As Double, ByVal Impuesto As Double, ByVal Total As Double, ByVal Cancela As Integer, ByVal FechaDeCancelado As String) As OdeCRow
             Dim rowOdeCRow As OdeCRow = CType(Me.NewRow, OdeCRow)
             Dim columnValuesArray() As Object = New Object() {IdOdeC, IdProveedor, Folio, FechaOrden, SubTotal, Descuento, Impuesto, Total, Cancela, FechaDeCancelado}
             rowOdeCRow.ItemArray = columnValuesArray
@@ -986,13 +976,13 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnFolio)
             Me.columnFechaOrden = New Global.System.Data.DataColumn("FechaOrden", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechaOrden)
-            Me.columnSubTotal = New Global.System.Data.DataColumn("SubTotal", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnSubTotal = New Global.System.Data.DataColumn("SubTotal", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSubTotal)
-            Me.columnDescuento = New Global.System.Data.DataColumn("Descuento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDescuento = New Global.System.Data.DataColumn("Descuento", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescuento)
-            Me.columnImpuesto = New Global.System.Data.DataColumn("Impuesto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnImpuesto = New Global.System.Data.DataColumn("Impuesto", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImpuesto)
-            Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
             Me.columnCancela = New Global.System.Data.DataColumn("Cancela", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCancela)
@@ -1269,12 +1259,9 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddOdeCDetalleRow(ByVal IdOdeCDetalle As Integer, ByVal parentOdeCRowByOdeC_OdeCDetalle As OdeCRow, ByVal IdArticulo As Integer, ByVal Cantidad As Integer, ByVal Precio As Integer, ByVal Concepto As String) As OdeCDetalleRow
+        Public Overloads Function AddOdeCDetalleRow(ByVal IdOdeCDetalle As Integer, ByVal IdOdeC As Integer, ByVal IdArticulo As Integer, ByVal Cantidad As Integer, ByVal Precio As Double, ByVal Concepto As String) As OdeCDetalleRow
             Dim rowOdeCDetalleRow As OdeCDetalleRow = CType(Me.NewRow, OdeCDetalleRow)
-            Dim columnValuesArray() As Object = New Object() {IdOdeCDetalle, Nothing, IdArticulo, Cantidad, Precio, Concepto}
-            If (Not (parentOdeCRowByOdeC_OdeCDetalle) Is Nothing) Then
-                columnValuesArray(1) = parentOdeCRowByOdeC_OdeCDetalle(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {IdOdeCDetalle, IdOdeC, IdArticulo, Cantidad, Precio, Concepto}
             rowOdeCDetalleRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowOdeCDetalleRow)
             Return rowOdeCDetalleRow
@@ -1322,7 +1309,7 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnIdArticulo)
             Me.columnCantidad = New Global.System.Data.DataColumn("Cantidad", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCantidad)
-            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnPrecio = New Global.System.Data.DataColumn("Precio", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrecio)
             Me.columnConcepto = New Global.System.Data.DataColumn("Concepto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnConcepto)
@@ -1637,12 +1624,9 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddProveedorRow(ByVal parentOdeCRowByOdeC_Proveedor As OdeCRow, ByVal Nombre As String, ByVal RFC As String, ByVal Calle As String, ByVal Numero As Integer, ByVal Colonia As String, ByVal Estado As String, ByVal Ciudad As String, ByVal CodigoPostal As String, ByVal Activo As Integer) As ProveedorRow
+        Public Overloads Function AddProveedorRow(ByVal IdProveedor As Integer, ByVal Nombre As String, ByVal RFC As String, ByVal Calle As String, ByVal Numero As Integer, ByVal Colonia As String, ByVal Estado As String, ByVal Ciudad As String, ByVal CodigoPostal As String, ByVal Activo As Integer) As ProveedorRow
             Dim rowProveedorRow As ProveedorRow = CType(Me.NewRow, ProveedorRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nombre, RFC, Calle, Numero, Colonia, Estado, Ciudad, CodigoPostal, Activo}
-            If (Not (parentOdeCRowByOdeC_Proveedor) Is Nothing) Then
-                columnValuesArray(0) = parentOdeCRowByOdeC_Proveedor(1)
-            End If
+            Dim columnValuesArray() As Object = New Object() {IdProveedor, Nombre, RFC, Calle, Numero, Colonia, Estado, Ciudad, CodigoPostal, Activo}
             rowProveedorRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProveedorRow)
             Return rowProveedorRow
@@ -2188,16 +2172,16 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Nombre() As String
+        Public Property Codigo() As String
             Get
                 Try
-                    Return CType(Me(Me.tableArticulo.NombreColumn), String)
+                    Return CType(Me(Me.tableArticulo.CodigoColumn), String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Nombre' de la tabla 'Articulo' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Codigo' de la tabla 'Articulo' es DBNull.", e)
                 End Try
             End Get
             Set(value As String)
-                Me(Me.tableArticulo.NombreColumn) = value
+                Me(Me.tableArticulo.CodigoColumn) = value
             End Set
         End Property
 
@@ -2218,30 +2202,30 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Precio() As Integer
+        Public Property Precio() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableArticulo.PrecioColumn), Integer)
+                    Return CType(Me(Me.tableArticulo.PrecioColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Precio' de la tabla 'Articulo' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableArticulo.PrecioColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Costo() As Integer
+        Public Property Costo() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableArticulo.CostoColumn), Integer)
+                    Return CType(Me(Me.tableArticulo.CostoColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Costo' de la tabla 'Articulo' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableArticulo.CostoColumn) = value
             End Set
         End Property
@@ -2275,14 +2259,14 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsNombreNull() As Boolean
-            Return Me.IsNull(Me.tableArticulo.NombreColumn)
+        Public Function IsCodigoNull() As Boolean
+            Return Me.IsNull(Me.tableArticulo.CodigoColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetNombreNull()
-            Me(Me.tableArticulo.NombreColumn) = Global.System.Convert.DBNull
+        Public Sub SetCodigoNull()
+            Me(Me.tableArticulo.CodigoColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2411,60 +2395,60 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property SubTotal() As Integer
+        Public Property SubTotal() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableOdeC.SubTotalColumn), Integer)
+                    Return CType(Me(Me.tableOdeC.SubTotalColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SubTotal' de la tabla 'OdeC' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableOdeC.SubTotalColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Descuento() As Integer
+        Public Property Descuento() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableOdeC.DescuentoColumn), Integer)
+                    Return CType(Me(Me.tableOdeC.DescuentoColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Descuento' de la tabla 'OdeC' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableOdeC.DescuentoColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Impuesto() As Integer
+        Public Property Impuesto() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableOdeC.ImpuestoColumn), Integer)
+                    Return CType(Me(Me.tableOdeC.ImpuestoColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Impuesto' de la tabla 'OdeC' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableOdeC.ImpuestoColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Total() As Integer
+        Public Property Total() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableOdeC.TotalColumn), Integer)
+                    Return CType(Me(Me.tableOdeC.TotalColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Total' de la tabla 'OdeC' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableOdeC.TotalColumn) = value
             End Set
         End Property
@@ -2618,26 +2602,6 @@ Partial Public Class DataSet1
         Public Sub SetFechaDeCanceladoNull()
             Me(Me.tableOdeC.FechaDeCanceladoColumn) = Global.System.Convert.DBNull
         End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function GetProveedorRows() As ProveedorRow()
-            If (Me.Table.ChildRelations("OdeC_Proveedor") Is Nothing) Then
-                Return New ProveedorRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("OdeC_Proveedor")), ProveedorRow())
-            End If
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function GetOdeCDetalleRows() As OdeCDetalleRow()
-            If (Me.Table.ChildRelations("OdeC_OdeCDetalle") Is Nothing) Then
-                Return New OdeCDetalleRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("OdeC_OdeCDetalle")), OdeCDetalleRow())
-            End If
-        End Function
     End Class
 
     '''<summary>
@@ -2717,15 +2681,15 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Precio() As Integer
+        Public Property Precio() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableOdeCDetalle.PrecioColumn), Integer)
+                    Return CType(Me(Me.tableOdeCDetalle.PrecioColumn), Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Precio' de la tabla 'OdeCDetalle' es DBNull.", e)
                 End Try
             End Get
-            Set(value As Integer)
+            Set(value As Double)
                 Me(Me.tableOdeCDetalle.PrecioColumn) = value
             End Set
         End Property
@@ -2742,17 +2706,6 @@ Partial Public Class DataSet1
             End Get
             Set(value As String)
                 Me(Me.tableOdeCDetalle.ConceptoColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property OdeCRow() As OdeCRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("OdeC_OdeCDetalle")), OdeCRow)
-            End Get
-            Set(value As OdeCRow)
-                Me.SetParentRow(value, Me.Table.ParentRelations("OdeC_OdeCDetalle"))
             End Set
         End Property
 
@@ -2991,17 +2944,6 @@ Partial Public Class DataSet1
             End Get
             Set(value As Integer)
                 Me(Me.tableProveedor.ActivoColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property OdeCRow() As OdeCRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("OdeC_Proveedor")), OdeCRow)
-            End Get
-            Set(value As OdeCRow)
-                Me.SetParentRow(value, Me.Table.ParentRelations("OdeC_Proveedor"))
             End Set
         End Property
 

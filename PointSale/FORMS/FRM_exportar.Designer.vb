@@ -59,7 +59,7 @@ Partial Class FRM_exportar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SpringGreen
-        Me.ClientSize = New System.Drawing.Size(872, 471)
+        Me.ClientSize = New System.Drawing.Size(984, 471)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnExporta)
         Me.Controls.Add(Me.dg1)

@@ -28,3 +28,7 @@ C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\office.dll
 C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\Microsoft.Vbe.Interop.dll
 C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\Microsoft.Office.Interop.Excel.xml
 C:\Users\alber\Desktop\Topicos3\PointSale\bin\Debug\office.xml
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_buscaArticulo.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_buscaProveedor.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_usuario.resources
+C:\Users\alber\Desktop\Topicos3\PointSale\obj\x86\Debug\PointSale.FRM_welcome.resources

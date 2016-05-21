@@ -32,14 +32,14 @@ Partial Class FRM_login
         '
         'TXT_usuario
         '
-        Me.TXT_usuario.Location = New System.Drawing.Point(336, 155)
+        Me.TXT_usuario.Location = New System.Drawing.Point(411, 134)
         Me.TXT_usuario.Name = "TXT_usuario"
         Me.TXT_usuario.Size = New System.Drawing.Size(166, 20)
         Me.TXT_usuario.TabIndex = 0
         '
         'TXT_password
         '
-        Me.TXT_password.Location = New System.Drawing.Point(336, 231)
+        Me.TXT_password.Location = New System.Drawing.Point(411, 210)
         Me.TXT_password.Name = "TXT_password"
         Me.TXT_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TXT_password.Size = New System.Drawing.Size(166, 20)
@@ -48,7 +48,7 @@ Partial Class FRM_login
         'LBL_usuario
         '
         Me.LBL_usuario.AutoSize = True
-        Me.LBL_usuario.Location = New System.Drawing.Point(336, 139)
+        Me.LBL_usuario.Location = New System.Drawing.Point(411, 118)
         Me.LBL_usuario.Name = "LBL_usuario"
         Me.LBL_usuario.Size = New System.Drawing.Size(46, 13)
         Me.LBL_usuario.TabIndex = 2
@@ -57,7 +57,7 @@ Partial Class FRM_login
         'LBL_password
         '
         Me.LBL_password.AutoSize = True
-        Me.LBL_password.Location = New System.Drawing.Point(336, 215)
+        Me.LBL_password.Location = New System.Drawing.Point(411, 194)
         Me.LBL_password.Name = "LBL_password"
         Me.LBL_password.Size = New System.Drawing.Size(56, 13)
         Me.LBL_password.TabIndex = 3
@@ -65,7 +65,7 @@ Partial Class FRM_login
         '
         'BTN_inciaSesion
         '
-        Me.BTN_inciaSesion.Location = New System.Drawing.Point(368, 288)
+        Me.BTN_inciaSesion.Location = New System.Drawing.Point(443, 267)
         Me.BTN_inciaSesion.Name = "BTN_inciaSesion"
         Me.BTN_inciaSesion.Size = New System.Drawing.Size(98, 23)
         Me.BTN_inciaSesion.TabIndex = 4
@@ -74,7 +74,7 @@ Partial Class FRM_login
         '
         'BTN_salir
         '
-        Me.BTN_salir.Location = New System.Drawing.Point(368, 328)
+        Me.BTN_salir.Location = New System.Drawing.Point(443, 307)
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(98, 23)
         Me.BTN_salir.TabIndex = 5
@@ -86,7 +86,7 @@ Partial Class FRM_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SpringGreen
-        Me.ClientSize = New System.Drawing.Size(872, 471)
+        Me.ClientSize = New System.Drawing.Size(984, 471)
         Me.Controls.Add(Me.BTN_salir)
         Me.Controls.Add(Me.BTN_inciaSesion)
         Me.Controls.Add(Me.LBL_password)

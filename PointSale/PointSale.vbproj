@@ -82,6 +82,18 @@
     <Compile Include="FORMS\FRM_articulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMS\FRM_buscaArticulo.Designer.vb">
+      <DependentUpon>FRM_buscaArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_buscaArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FRM_buscaProveedor.Designer.vb">
+      <DependentUpon>FRM_buscaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_buscaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMS\FRM_exportar.Designer.vb">
       <DependentUpon>FRM_exportar.vb</DependentUpon>
     </Compile>
@@ -118,6 +130,18 @@
     <Compile Include="FORMS\FRM_reporte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMS\FRM_usuario.Designer.vb">
+      <DependentUpon>FRM_usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FRM_welcome.Designer.vb">
+      <DependentUpon>FRM_welcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\FRM_welcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LOGIC\CLS_articulos.vb" />
     <Compile Include="LOGIC\CLS_ordencompra.vb" />
     <Compile Include="LOGIC\CLS_ordendecompradetalle.vb" />
@@ -151,6 +175,12 @@
       <DependentUpon>RPT_articulo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REPORTS\RPT_orden.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_orden.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORTS\RPT_proveedor.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +191,12 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMS\FRM_articulos.resx">
       <DependentUpon>FRM_articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_buscaArticulo.resx">
+      <DependentUpon>FRM_buscaArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_buscaProveedor.resx">
+      <DependentUpon>FRM_buscaProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_exportar.resx">
       <DependentUpon>FRM_exportar.vb</DependentUpon>
@@ -180,6 +216,12 @@
     <EmbeddedResource Include="FORMS\FRM_reporte.resx">
       <DependentUpon>FRM_reporte.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_usuario.resx">
+      <DependentUpon>FRM_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FRM_welcome.resx">
+      <DependentUpon>FRM_welcome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -189,6 +231,10 @@
     <EmbeddedResource Include="REPORTS\RPT_articulo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_articulo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTS\RPT_orden.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_orden.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTS\RPT_proveedor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

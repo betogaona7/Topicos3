@@ -1,14 +1,8 @@
 ﻿Public Class CLS_ordendecompradetalle
 #Region "Declaracion de variables"
-    'variables de conexion DB'
-    Dim xCnx As New dbSQL
-    Dim StrSql As String
-    Dim xDS As New DataSet
-    Dim xDT As New DataTable
-
     'atributos de la clase'
-    Private _IdOdeCDetalle As Integer
-    Private _IdOdeC As Integer
+    Private _IdOrdenDetalle As Integer
+    Private _IdOrden As Integer
     Private _IdArticulo As Integer
     Private _Cantidad As Integer
     Private _Precio As Double
@@ -18,22 +12,22 @@
 #End Region
 
 #Region "Propiedades"
-    'IdOdeCDetalle'
-    Public Property IdOdeCDetalle() As Integer
+    'IdOrdenDetalle'
+    Public Property IdOrdenDetalle() As Integer
         Get
-            Return _IdOdeCDetalle
+            Return _IdOrdenDetalle
         End Get
         Set(ByVal value As Integer)
-            _IdOdeCDetalle = value
+            _IdOrdenDetalle = value
         End Set
     End Property
-    'IOdeC'
-    Public Property IdOdeC() As Integer
+    'IdOrden'
+    Public Property IdOrden() As Integer
         Get
-            Return _IdOdeC
+            Return _IdOrden
         End Get
         Set(ByVal value As Integer)
-            _IdOdeC = value
+            _IdOrden = value
         End Set
     End Property
     'IdArticulo'
@@ -72,10 +66,6 @@
             _Concepto = value
         End Set
     End Property
-#End Region
-
-#Region "Rutinas DATABASE"
-
 #End Region
 
 End Class
