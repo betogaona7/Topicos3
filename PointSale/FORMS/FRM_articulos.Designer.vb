@@ -27,7 +27,6 @@ Partial Class FRM_articulos
         Me.LBL_codigo = New System.Windows.Forms.Label()
         Me.LBL_id = New System.Windows.Forms.Label()
         Me.BTN_salir = New System.Windows.Forms.Button()
-        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.BTN_reporte = New System.Windows.Forms.Button()
         Me.BTN_limpiar = New System.Windows.Forms.Button()
         Me.BTN_eliminar = New System.Windows.Forms.Button()
@@ -46,35 +45,35 @@ Partial Class FRM_articulos
         'TXT_codigo
         '
         Me.TXT_codigo.Location = New System.Drawing.Point(114, 65)
-        Me.TXT_codigo.MaxLength = 149
+        Me.TXT_codigo.MaxLength = 10
         Me.TXT_codigo.Name = "TXT_codigo"
         Me.TXT_codigo.Size = New System.Drawing.Size(78, 20)
-        Me.TXT_codigo.TabIndex = 41
+        Me.TXT_codigo.TabIndex = 1
         '
         'TXT_id
         '
         Me.TXT_id.Location = New System.Drawing.Point(114, 21)
         Me.TXT_id.Name = "TXT_id"
         Me.TXT_id.Size = New System.Drawing.Size(78, 20)
-        Me.TXT_id.TabIndex = 40
+        Me.TXT_id.TabIndex = 0
         '
         'LBL_codigo
         '
         Me.LBL_codigo.AutoSize = True
         Me.LBL_codigo.Location = New System.Drawing.Point(68, 68)
         Me.LBL_codigo.Name = "LBL_codigo"
-        Me.LBL_codigo.Size = New System.Drawing.Size(40, 13)
-        Me.LBL_codigo.TabIndex = 43
-        Me.LBL_codigo.Text = "Codigo"
+        Me.LBL_codigo.Size = New System.Drawing.Size(43, 13)
+        Me.LBL_codigo.TabIndex = 7
+        Me.LBL_codigo.Text = "Codigo:"
         '
         'LBL_id
         '
         Me.LBL_id.AutoSize = True
         Me.LBL_id.Location = New System.Drawing.Point(68, 24)
         Me.LBL_id.Name = "LBL_id"
-        Me.LBL_id.Size = New System.Drawing.Size(18, 13)
-        Me.LBL_id.TabIndex = 42
-        Me.LBL_id.Text = "ID"
+        Me.LBL_id.Size = New System.Drawing.Size(21, 13)
+        Me.LBL_id.TabIndex = 6
+        Me.LBL_id.Text = "ID:"
         '
         'BTN_salir
         '
@@ -83,19 +82,9 @@ Partial Class FRM_articulos
         Me.BTN_salir.Location = New System.Drawing.Point(821, 414)
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_salir.TabIndex = 39
+        Me.BTN_salir.TabIndex = 16
         Me.BTN_salir.Text = "&Salir"
         Me.BTN_salir.UseVisualStyleBackColor = False
-        '
-        'BTN_exportar
-        '
-        Me.BTN_exportar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.BTN_exportar.Location = New System.Drawing.Point(821, 346)
-        Me.BTN_exportar.Name = "BTN_exportar"
-        Me.BTN_exportar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_exportar.TabIndex = 38
-        Me.BTN_exportar.Text = "&Exportar"
-        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'BTN_reporte
         '
@@ -103,7 +92,7 @@ Partial Class FRM_articulos
         Me.BTN_reporte.Location = New System.Drawing.Point(821, 317)
         Me.BTN_reporte.Name = "BTN_reporte"
         Me.BTN_reporte.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_reporte.TabIndex = 37
+        Me.BTN_reporte.TabIndex = 15
         Me.BTN_reporte.Text = "&Reporte"
         Me.BTN_reporte.UseVisualStyleBackColor = True
         '
@@ -113,7 +102,7 @@ Partial Class FRM_articulos
         Me.BTN_limpiar.Location = New System.Drawing.Point(821, 288)
         Me.BTN_limpiar.Name = "BTN_limpiar"
         Me.BTN_limpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_limpiar.TabIndex = 36
+        Me.BTN_limpiar.TabIndex = 14
         Me.BTN_limpiar.Text = "&Limpiar"
         Me.BTN_limpiar.UseVisualStyleBackColor = True
         '
@@ -123,7 +112,7 @@ Partial Class FRM_articulos
         Me.BTN_eliminar.Location = New System.Drawing.Point(821, 259)
         Me.BTN_eliminar.Name = "BTN_eliminar"
         Me.BTN_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_eliminar.TabIndex = 35
+        Me.BTN_eliminar.TabIndex = 13
         Me.BTN_eliminar.Text = "&Eliminar"
         Me.BTN_eliminar.UseVisualStyleBackColor = True
         '
@@ -133,7 +122,7 @@ Partial Class FRM_articulos
         Me.BTN_guardar.Location = New System.Drawing.Point(821, 230)
         Me.BTN_guardar.Name = "BTN_guardar"
         Me.BTN_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_guardar.TabIndex = 34
+        Me.BTN_guardar.TabIndex = 12
         Me.BTN_guardar.Text = "&Guardar"
         Me.BTN_guardar.UseVisualStyleBackColor = True
         '
@@ -143,7 +132,7 @@ Partial Class FRM_articulos
         Me.BTN_nuevo.Location = New System.Drawing.Point(821, 201)
         Me.BTN_nuevo.Name = "BTN_nuevo"
         Me.BTN_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_nuevo.TabIndex = 33
+        Me.BTN_nuevo.TabIndex = 11
         Me.BTN_nuevo.Text = "&Nuevo"
         Me.BTN_nuevo.UseVisualStyleBackColor = True
         '
@@ -153,58 +142,58 @@ Partial Class FRM_articulos
         Me.DGV_articulo.Location = New System.Drawing.Point(59, 191)
         Me.DGV_articulo.Name = "DGV_articulo"
         Me.DGV_articulo.Size = New System.Drawing.Size(726, 268)
-        Me.DGV_articulo.TabIndex = 32
+        Me.DGV_articulo.TabIndex = 5
         '
         'LBL_precio
         '
         Me.LBL_precio.AutoSize = True
-        Me.LBL_precio.Location = New System.Drawing.Point(68, 104)
+        Me.LBL_precio.Location = New System.Drawing.Point(68, 97)
         Me.LBL_precio.Name = "LBL_precio"
-        Me.LBL_precio.Size = New System.Drawing.Size(37, 13)
-        Me.LBL_precio.TabIndex = 45
-        Me.LBL_precio.Text = "Precio"
+        Me.LBL_precio.Size = New System.Drawing.Size(40, 13)
+        Me.LBL_precio.TabIndex = 8
+        Me.LBL_precio.Text = "Precio:"
         '
         'LBL_descripcion
         '
         Me.LBL_descripcion.AutoSize = True
-        Me.LBL_descripcion.Location = New System.Drawing.Point(198, 72)
+        Me.LBL_descripcion.Location = New System.Drawing.Point(277, 68)
         Me.LBL_descripcion.Name = "LBL_descripcion"
-        Me.LBL_descripcion.Size = New System.Drawing.Size(63, 13)
-        Me.LBL_descripcion.TabIndex = 46
-        Me.LBL_descripcion.Text = "Descripcion"
+        Me.LBL_descripcion.Size = New System.Drawing.Size(66, 13)
+        Me.LBL_descripcion.TabIndex = 9
+        Me.LBL_descripcion.Text = "Descripcion:"
         '
         'TXT_descripcion
         '
-        Me.TXT_descripcion.Location = New System.Drawing.Point(267, 65)
-        Me.TXT_descripcion.MaxLength = 149
+        Me.TXT_descripcion.Location = New System.Drawing.Point(349, 65)
+        Me.TXT_descripcion.MaxLength = 100
         Me.TXT_descripcion.Name = "TXT_descripcion"
         Me.TXT_descripcion.Size = New System.Drawing.Size(436, 20)
-        Me.TXT_descripcion.TabIndex = 47
+        Me.TXT_descripcion.TabIndex = 2
         '
         'TXT_precio
         '
-        Me.TXT_precio.Location = New System.Drawing.Point(114, 101)
+        Me.TXT_precio.Location = New System.Drawing.Point(114, 94)
         Me.TXT_precio.MaxLength = 149
         Me.TXT_precio.Name = "TXT_precio"
         Me.TXT_precio.Size = New System.Drawing.Size(78, 20)
-        Me.TXT_precio.TabIndex = 48
+        Me.TXT_precio.TabIndex = 3
         '
         'LBL_costo
         '
         Me.LBL_costo.AutoSize = True
-        Me.LBL_costo.Location = New System.Drawing.Point(198, 104)
+        Me.LBL_costo.Location = New System.Drawing.Point(277, 101)
         Me.LBL_costo.Name = "LBL_costo"
-        Me.LBL_costo.Size = New System.Drawing.Size(34, 13)
-        Me.LBL_costo.TabIndex = 49
-        Me.LBL_costo.Text = "Costo"
+        Me.LBL_costo.Size = New System.Drawing.Size(37, 13)
+        Me.LBL_costo.TabIndex = 10
+        Me.LBL_costo.Text = "Costo:"
         '
         'TXT_costo
         '
-        Me.TXT_costo.Location = New System.Drawing.Point(267, 97)
+        Me.TXT_costo.Location = New System.Drawing.Point(349, 94)
         Me.TXT_costo.MaxLength = 149
         Me.TXT_costo.Name = "TXT_costo"
         Me.TXT_costo.Size = New System.Drawing.Size(103, 20)
-        Me.TXT_costo.TabIndex = 50
+        Me.TXT_costo.TabIndex = 4
         '
         'FRM_articulos
         '
@@ -223,7 +212,6 @@ Partial Class FRM_articulos
         Me.Controls.Add(Me.LBL_codigo)
         Me.Controls.Add(Me.LBL_id)
         Me.Controls.Add(Me.BTN_salir)
-        Me.Controls.Add(Me.BTN_exportar)
         Me.Controls.Add(Me.BTN_reporte)
         Me.Controls.Add(Me.BTN_limpiar)
         Me.Controls.Add(Me.BTN_eliminar)
@@ -245,7 +233,6 @@ Partial Class FRM_articulos
     Friend WithEvents LBL_codigo As System.Windows.Forms.Label
     Friend WithEvents LBL_id As System.Windows.Forms.Label
     Friend WithEvents BTN_salir As System.Windows.Forms.Button
-    Friend WithEvents BTN_exportar As System.Windows.Forms.Button
     Friend WithEvents BTN_reporte As System.Windows.Forms.Button
     Friend WithEvents BTN_limpiar As System.Windows.Forms.Button
     Friend WithEvents BTN_eliminar As System.Windows.Forms.Button

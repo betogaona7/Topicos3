@@ -187,11 +187,6 @@
         Me.TXT_id.Focus()
     End Sub
 
-    'Exportar
-    Private Sub BTN_exportar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_exportar.Click
-        FRM_exportar.Load_Data(DGV_articulo)
-    End Sub
-
     'Salir
     Private Sub BTN_salir_Click(sender As System.Object, e As System.EventArgs) Handles BTN_salir.Click
         Me.Close()

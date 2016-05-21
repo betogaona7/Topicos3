@@ -14,61 +14,6 @@ Public Class FRM_InitialScreen
         ChildForm.Show()
     End Sub
 
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
-        Dim OpenFileDialog As New OpenFileDialog
-        OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        OpenFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
-        If (OpenFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = OpenFileDialog.FileName
-            ' TODO: agregue código aquí para abrir el archivo.
-        End If
-    End Sub
-
-    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Dim SaveFileDialog As New SaveFileDialog
-        SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        SaveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
-
-        If (SaveFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = SaveFileDialog.FileName
-            ' TODO: agregue código aquí para guardar el contenido actual del formulario en un archivo.
-        End If
-    End Sub
-
-
-    Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Utilice My.Computer.Clipboard para insertar el texto o las imágenes seleccionadas en el Portapapeles
-    End Sub
-
-    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Utilice My.Computer.Clipboard para insertar el texto o las imágenes seleccionadas en el Portapapeles
-    End Sub
-
-    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        'Utilice My.Computer.Clipboard.GetText() o My.Computer.Clipboard.GetData para recuperar la información del Portapapeles.
-    End Sub
-
-
-    Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.Cascade)
-    End Sub
-
-    Private Sub TileVerticalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.TileVertical)
-    End Sub
-
-    Private Sub TileHorizontalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.TileHorizontal)
-    End Sub
-
-    Private Sub ArrangeIconsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.ArrangeIcons)
-    End Sub
-
     Private Sub CloseAllToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         ' Cierre todos los formularios secundarios del principal.
         For Each ChildForm As Form In Me.MdiChildren
@@ -78,40 +23,55 @@ Public Class FRM_InitialScreen
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub FRM_InitialScreen_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    
 
-    End Sub
-
-    Private frmOpen As Form
-
-    Private Sub CloseWindow(ByVal pFrm As Form)
-        If (frmOpen Is Nothing) Then
-            frmOpen = pFrm
-        Else
-            frmOpen.Close()
-            frmOpen = pFrm
-        End If
-    End Sub
-
+    
 
     '-------------------------------------------------------------------
+    Private Sub CloseWindows()
+        For Each frm As Form In Me.MdiChildren
+            frm.Close()
+        Next
+        FRM_welcome.MdiParent = Me
+        FRM_welcome.Dock = DockStyle.Fill
+        FRM_welcome.Show()
+    End Sub
+
+    Private Sub FRM_InitialScreen_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        End
+    End Sub
+
+    Private Sub FRM_InitialScreen_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        FRM_welcome.MdiParent = Me
+        FRM_welcome.Dock = DockStyle.Fill
+        FRM_welcome.Show()
+    End Sub
+
     Private Sub TSM_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_cliente.Click
+        Me.CloseWindows()
         FRM_proveedor.MdiParent = Me
+        FRM_proveedor.Dock = DockStyle.Fill
         FRM_proveedor.Show()
     End Sub
 
     Private Sub TSM_articulo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_articulo.Click
+        Me.CloseWindows()
         FRM_articulos.MdiParent = Me
+        FRM_articulos.Dock = DockStyle.Fill
         FRM_articulos.Show()
     End Sub
 
     Private Sub TSM_orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_orden.Click
+        Me.CloseWindows()
         FRM_ordencompra.MdiParent = Me
+        FRM_ordencompra.Dock = DockStyle.Fill
         FRM_ordencompra.Show()
     End Sub
 
     Private Sub UsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Me.CloseWindows()
         FRM_usuario.MdiParent = Me
+        FRM_usuario.Dock = DockStyle.Fill
         FRM_usuario.Show()
     End Sub
 End Class

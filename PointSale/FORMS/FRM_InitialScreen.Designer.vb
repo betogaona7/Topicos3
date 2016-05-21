@@ -30,8 +30,6 @@ Partial Class FRM_InitialScreen
         Me.TSM_articulo = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSM_orden = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSM_reportePorFecha = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -41,10 +39,10 @@ Partial Class FRM_InitialScreen
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OperacionesToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OperacionesToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(968, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(976, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -58,47 +56,34 @@ Partial Class FRM_InitialScreen
         'TSM_cliente
         '
         Me.TSM_cliente.Name = "TSM_cliente"
-        Me.TSM_cliente.Size = New System.Drawing.Size(169, 22)
+        Me.TSM_cliente.Size = New System.Drawing.Size(174, 22)
         Me.TSM_cliente.Text = "Proveedores"
         '
         'TSM_articulo
         '
         Me.TSM_articulo.Name = "TSM_articulo"
-        Me.TSM_articulo.Size = New System.Drawing.Size(169, 22)
+        Me.TSM_articulo.Size = New System.Drawing.Size(174, 22)
         Me.TSM_articulo.Text = "Articulos"
         '
         'TSM_orden
         '
         Me.TSM_orden.Name = "TSM_orden"
-        Me.TSM_orden.Size = New System.Drawing.Size(169, 22)
-        Me.TSM_orden.Text = "Orden de Compra"
+        Me.TSM_orden.Size = New System.Drawing.Size(174, 22)
+        Me.TSM_orden.Text = "Orden de Compras"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_reportePorFecha})
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
-        Me.ReportesToolStripMenuItem.Text = "Reportes "
-        '
-        'TSM_reportePorFecha
-        '
-        Me.TSM_reportePorFecha.Name = "TSM_reportePorFecha"
-        Me.TSM_reportePorFecha.Size = New System.Drawing.Size(129, 22)
-        Me.TSM_reportePorFecha.Text = "Por fechas"
         '
         'StatusStrip
         '
         Me.StatusStrip.AutoSize = False
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 410)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 508)
         Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(968, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(976, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -114,7 +99,7 @@ Partial Class FRM_InitialScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(968, 432)
+        Me.ClientSize = New System.Drawing.Size(976, 530)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
@@ -135,8 +120,6 @@ Partial Class FRM_InitialScreen
     Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TSM_reportePorFecha As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OperacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSM_cliente As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSM_articulo As System.Windows.Forms.ToolStripMenuItem

@@ -74,15 +74,15 @@ Partial Class FRM_ordencompra
         Me.DGV_orden.Location = New System.Drawing.Point(12, 170)
         Me.DGV_orden.Name = "DGV_orden"
         Me.DGV_orden.Size = New System.Drawing.Size(610, 289)
-        Me.DGV_orden.TabIndex = 0
+        Me.DGV_orden.TabIndex = 6
         '
         'BTN_nuevo
         '
         Me.BTN_nuevo.Location = New System.Drawing.Point(785, 335)
         Me.BTN_nuevo.Name = "BTN_nuevo"
         Me.BTN_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_nuevo.TabIndex = 1
-        Me.BTN_nuevo.Text = "Nuevo"
+        Me.BTN_nuevo.TabIndex = 15
+        Me.BTN_nuevo.Text = "&Nuevo"
         Me.BTN_nuevo.UseVisualStyleBackColor = True
         '
         'BTN_guardar
@@ -90,25 +90,26 @@ Partial Class FRM_ordencompra
         Me.BTN_guardar.Location = New System.Drawing.Point(785, 364)
         Me.BTN_guardar.Name = "BTN_guardar"
         Me.BTN_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_guardar.TabIndex = 2
-        Me.BTN_guardar.Text = "Guardar"
+        Me.BTN_guardar.TabIndex = 16
+        Me.BTN_guardar.Text = "&Guardar"
         Me.BTN_guardar.UseVisualStyleBackColor = True
         '
         'BTN_salir
         '
+        Me.BTN_salir.BackColor = System.Drawing.Color.DimGray
         Me.BTN_salir.Location = New System.Drawing.Point(785, 393)
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_salir.TabIndex = 3
-        Me.BTN_salir.Text = "Salir"
-        Me.BTN_salir.UseVisualStyleBackColor = True
+        Me.BTN_salir.TabIndex = 17
+        Me.BTN_salir.Text = "&Salir"
+        Me.BTN_salir.UseVisualStyleBackColor = False
         '
         'TXT_subtotal
         '
         Me.TXT_subtotal.Location = New System.Drawing.Point(739, 189)
         Me.TXT_subtotal.Name = "TXT_subtotal"
         Me.TXT_subtotal.Size = New System.Drawing.Size(203, 20)
-        Me.TXT_subtotal.TabIndex = 4
+        Me.TXT_subtotal.TabIndex = 2
         '
         'TXT_total
         '
@@ -122,14 +123,14 @@ Partial Class FRM_ordencompra
         Me.TXT_iva.Location = New System.Drawing.Point(739, 241)
         Me.TXT_iva.Name = "TXT_iva"
         Me.TXT_iva.Size = New System.Drawing.Size(203, 20)
-        Me.TXT_iva.TabIndex = 6
+        Me.TXT_iva.TabIndex = 4
         '
         'TXT_descuento
         '
         Me.TXT_descuento.Location = New System.Drawing.Point(739, 215)
         Me.TXT_descuento.Name = "TXT_descuento"
         Me.TXT_descuento.Size = New System.Drawing.Size(203, 20)
-        Me.TXT_descuento.TabIndex = 7
+        Me.TXT_descuento.TabIndex = 3
         '
         'LBL_SubTotal
         '
@@ -137,7 +138,7 @@ Partial Class FRM_ordencompra
         Me.LBL_SubTotal.Location = New System.Drawing.Point(674, 192)
         Me.LBL_SubTotal.Name = "LBL_SubTotal"
         Me.LBL_SubTotal.Size = New System.Drawing.Size(50, 13)
-        Me.LBL_SubTotal.TabIndex = 8
+        Me.LBL_SubTotal.TabIndex = 11
         Me.LBL_SubTotal.Text = "SubTotal"
         '
         'Label1
@@ -146,7 +147,7 @@ Partial Class FRM_ordencompra
         Me.Label1.Location = New System.Drawing.Point(674, 218)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 13)
-        Me.Label1.TabIndex = 9
+        Me.Label1.TabIndex = 12
         Me.Label1.Text = "Descuento"
         '
         'Label2
@@ -155,7 +156,7 @@ Partial Class FRM_ordencompra
         Me.Label2.Location = New System.Drawing.Point(674, 244)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
-        Me.Label2.TabIndex = 10
+        Me.Label2.TabIndex = 13
         Me.Label2.Text = "I.V.A"
         '
         'Label3
@@ -164,7 +165,7 @@ Partial Class FRM_ordencompra
         Me.Label3.Location = New System.Drawing.Point(674, 270)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
-        Me.Label3.TabIndex = 11
+        Me.Label3.TabIndex = 14
         Me.Label3.Text = "Total"
         '
         'GroupBox1
@@ -183,7 +184,7 @@ Partial Class FRM_ordencompra
         Me.GroupBox1.Location = New System.Drawing.Point(0, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(860, 74)
-        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Proveedor"
         '
@@ -193,7 +194,7 @@ Partial Class FRM_ordencompra
         Me.Label4.Location = New System.Drawing.Point(641, 27)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(42, 13)
-        Me.Label4.TabIndex = 13
+        Me.Label4.TabIndex = 10
         Me.Label4.Text = "Colonia"
         '
         'BTN_F2rfc
@@ -201,7 +202,7 @@ Partial Class FRM_ordencompra
         Me.BTN_F2rfc.Location = New System.Drawing.Point(128, 41)
         Me.BTN_F2rfc.Name = "BTN_F2rfc"
         Me.BTN_F2rfc.Size = New System.Drawing.Size(35, 23)
-        Me.BTN_F2rfc.TabIndex = 27
+        Me.BTN_F2rfc.TabIndex = 6
         Me.BTN_F2rfc.Text = "F2"
         Me.BTN_F2rfc.UseVisualStyleBackColor = True
         '
@@ -211,7 +212,7 @@ Partial Class FRM_ordencompra
         Me.Label5.Location = New System.Drawing.Point(553, 27)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(44, 13)
-        Me.Label5.TabIndex = 14
+        Me.Label5.TabIndex = 9
         Me.Label5.Text = "Numero"
         '
         'Label6
@@ -220,7 +221,7 @@ Partial Class FRM_ordencompra
         Me.Label6.Location = New System.Drawing.Point(368, 27)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(30, 13)
-        Me.Label6.TabIndex = 15
+        Me.Label6.TabIndex = 8
         Me.Label6.Text = "Calle"
         '
         'Label7
@@ -229,7 +230,7 @@ Partial Class FRM_ordencompra
         Me.Label7.Location = New System.Drawing.Point(178, 27)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 13)
-        Me.Label7.TabIndex = 16
+        Me.Label7.TabIndex = 7
         Me.Label7.Text = "Nombre"
         '
         'Label8
@@ -238,43 +239,47 @@ Partial Class FRM_ordencompra
         Me.Label8.Location = New System.Drawing.Point(12, 27)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(28, 13)
-        Me.Label8.TabIndex = 17
+        Me.Label8.TabIndex = 5
         Me.Label8.Text = "RFC"
         '
         'TXT_nombre
         '
         Me.TXT_nombre.Location = New System.Drawing.Point(181, 43)
+        Me.TXT_nombre.MaxLength = 100
         Me.TXT_nombre.Name = "TXT_nombre"
         Me.TXT_nombre.Size = New System.Drawing.Size(181, 20)
-        Me.TXT_nombre.TabIndex = 17
+        Me.TXT_nombre.TabIndex = 1
         '
         'TXT_calle
         '
         Me.TXT_calle.Location = New System.Drawing.Point(368, 43)
+        Me.TXT_calle.MaxLength = 100
         Me.TXT_calle.Name = "TXT_calle"
         Me.TXT_calle.Size = New System.Drawing.Size(182, 20)
-        Me.TXT_calle.TabIndex = 16
+        Me.TXT_calle.TabIndex = 2
         '
         'TXT_numero
         '
         Me.TXT_numero.Location = New System.Drawing.Point(556, 43)
         Me.TXT_numero.Name = "TXT_numero"
         Me.TXT_numero.Size = New System.Drawing.Size(82, 20)
-        Me.TXT_numero.TabIndex = 15
+        Me.TXT_numero.TabIndex = 3
         '
         'TXT_colonia
         '
         Me.TXT_colonia.Location = New System.Drawing.Point(644, 43)
+        Me.TXT_colonia.MaxLength = 100
         Me.TXT_colonia.Name = "TXT_colonia"
         Me.TXT_colonia.Size = New System.Drawing.Size(210, 20)
-        Me.TXT_colonia.TabIndex = 14
+        Me.TXT_colonia.TabIndex = 4
         '
         'TXT_rfc
         '
         Me.TXT_rfc.Location = New System.Drawing.Point(12, 43)
+        Me.TXT_rfc.MaxLength = 15
         Me.TXT_rfc.Name = "TXT_rfc"
         Me.TXT_rfc.Size = New System.Drawing.Size(100, 20)
-        Me.TXT_rfc.TabIndex = 13
+        Me.TXT_rfc.TabIndex = 0
         '
         'GroupBox2
         '
@@ -293,7 +298,7 @@ Partial Class FRM_ordencompra
         Me.GroupBox2.Location = New System.Drawing.Point(0, 92)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(860, 72)
-        Me.GroupBox2.TabIndex = 13
+        Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Orden"
         '
@@ -302,7 +307,7 @@ Partial Class FRM_ordencompra
         Me.BTN_F2codigo.Location = New System.Drawing.Point(128, 43)
         Me.BTN_F2codigo.Name = "BTN_F2codigo"
         Me.BTN_F2codigo.Size = New System.Drawing.Size(35, 23)
-        Me.BTN_F2codigo.TabIndex = 28
+        Me.BTN_F2codigo.TabIndex = 6
         Me.BTN_F2codigo.Text = "F2"
         Me.BTN_F2codigo.UseVisualStyleBackColor = True
         '
@@ -312,7 +317,7 @@ Partial Class FRM_ordencompra
         Me.Label9.Location = New System.Drawing.Point(641, 30)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(42, 13)
-        Me.Label9.TabIndex = 18
+        Me.Label9.TabIndex = 10
         Me.Label9.Text = "Importe"
         '
         'Label10
@@ -321,7 +326,7 @@ Partial Class FRM_ordencompra
         Me.Label10.Location = New System.Drawing.Point(553, 30)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(49, 13)
-        Me.Label10.TabIndex = 19
+        Me.Label10.TabIndex = 9
         Me.Label10.Text = "Cantidad"
         '
         'Label11
@@ -330,7 +335,7 @@ Partial Class FRM_ordencompra
         Me.Label11.Location = New System.Drawing.Point(447, 30)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(37, 13)
-        Me.Label11.TabIndex = 20
+        Me.Label11.TabIndex = 8
         Me.Label11.Text = "Precio"
         '
         'Label12
@@ -339,7 +344,7 @@ Partial Class FRM_ordencompra
         Me.Label12.Location = New System.Drawing.Point(178, 30)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 13)
-        Me.Label12.TabIndex = 21
+        Me.Label12.TabIndex = 7
         Me.Label12.Text = "Descripción"
         '
         'Label13
@@ -348,7 +353,7 @@ Partial Class FRM_ordencompra
         Me.Label13.Location = New System.Drawing.Point(9, 30)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(40, 13)
-        Me.Label13.TabIndex = 22
+        Me.Label13.TabIndex = 5
         Me.Label13.Text = "Codigo"
         '
         'BTN_ok
@@ -356,7 +361,7 @@ Partial Class FRM_ordencompra
         Me.BTN_ok.Location = New System.Drawing.Point(779, 44)
         Me.BTN_ok.Name = "BTN_ok"
         Me.BTN_ok.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_ok.TabIndex = 14
+        Me.BTN_ok.TabIndex = 11
         Me.BTN_ok.Text = "Ok"
         Me.BTN_ok.UseVisualStyleBackColor = True
         '
@@ -365,35 +370,36 @@ Partial Class FRM_ordencompra
         Me.TXT_importe.Location = New System.Drawing.Point(644, 46)
         Me.TXT_importe.Name = "TXT_importe"
         Me.TXT_importe.Size = New System.Drawing.Size(126, 20)
-        Me.TXT_importe.TabIndex = 18
+        Me.TXT_importe.TabIndex = 4
         '
         'TXT_cantidad
         '
         Me.TXT_cantidad.Location = New System.Drawing.Point(556, 46)
         Me.TXT_cantidad.Name = "TXT_cantidad"
         Me.TXT_cantidad.Size = New System.Drawing.Size(82, 20)
-        Me.TXT_cantidad.TabIndex = 19
+        Me.TXT_cantidad.TabIndex = 3
         '
         'TXT_precio
         '
         Me.TXT_precio.Location = New System.Drawing.Point(450, 46)
         Me.TXT_precio.Name = "TXT_precio"
         Me.TXT_precio.Size = New System.Drawing.Size(100, 20)
-        Me.TXT_precio.TabIndex = 20
+        Me.TXT_precio.TabIndex = 2
         '
         'TXT_descripcion
         '
         Me.TXT_descripcion.Location = New System.Drawing.Point(181, 46)
+        Me.TXT_descripcion.MaxLength = 150
         Me.TXT_descripcion.Name = "TXT_descripcion"
         Me.TXT_descripcion.Size = New System.Drawing.Size(263, 20)
-        Me.TXT_descripcion.TabIndex = 21
+        Me.TXT_descripcion.TabIndex = 1
         '
         'TXT_codigo
         '
         Me.TXT_codigo.Location = New System.Drawing.Point(12, 46)
         Me.TXT_codigo.Name = "TXT_codigo"
         Me.TXT_codigo.Size = New System.Drawing.Size(100, 20)
-        Me.TXT_codigo.TabIndex = 22
+        Me.TXT_codigo.TabIndex = 0
         '
         'LBL_fecha3
         '
@@ -401,7 +407,7 @@ Partial Class FRM_ordencompra
         Me.LBL_fecha3.Location = New System.Drawing.Point(877, 63)
         Me.LBL_fecha3.Name = "LBL_fecha3"
         Me.LBL_fecha3.Size = New System.Drawing.Size(37, 13)
-        Me.LBL_fecha3.TabIndex = 26
+        Me.LBL_fecha3.TabIndex = 10
         Me.LBL_fecha3.Text = "Fecha"
         '
         'LBL_folio
@@ -410,7 +416,7 @@ Partial Class FRM_ordencompra
         Me.LBL_folio.Location = New System.Drawing.Point(877, 48)
         Me.LBL_folio.Name = "LBL_folio"
         Me.LBL_folio.Size = New System.Drawing.Size(29, 13)
-        Me.LBL_folio.TabIndex = 25
+        Me.LBL_folio.TabIndex = 9
         Me.LBL_folio.Text = "Folio"
         '
         'LBL_fecha2
@@ -419,7 +425,7 @@ Partial Class FRM_ordencompra
         Me.LBL_fecha2.Location = New System.Drawing.Point(877, 29)
         Me.LBL_fecha2.Name = "LBL_fecha2"
         Me.LBL_fecha2.Size = New System.Drawing.Size(37, 13)
-        Me.LBL_fecha2.TabIndex = 24
+        Me.LBL_fecha2.TabIndex = 8
         Me.LBL_fecha2.Text = "Fecha"
         '
         'LBL_fecha1
@@ -428,7 +434,7 @@ Partial Class FRM_ordencompra
         Me.LBL_fecha1.Location = New System.Drawing.Point(877, 12)
         Me.LBL_fecha1.Name = "LBL_fecha1"
         Me.LBL_fecha1.Size = New System.Drawing.Size(37, 13)
-        Me.LBL_fecha1.TabIndex = 23
+        Me.LBL_fecha1.TabIndex = 7
         Me.LBL_fecha1.Text = "Fecha"
         '
         'FRM_ordencompra

@@ -94,12 +94,6 @@
     <Compile Include="FORMS\FRM_buscaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\FRM_exportar.Designer.vb">
-      <DependentUpon>FRM_exportar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\FRM_exportar.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FORMS\FRM_proveedor.Designer.vb">
       <DependentUpon>FRM_proveedor.vb</DependentUpon>
     </Compile>
@@ -197,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_buscaProveedor.resx">
       <DependentUpon>FRM_buscaProveedor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FRM_exportar.resx">
-      <DependentUpon>FRM_exportar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FRM_proveedor.resx">
       <DependentUpon>FRM_proveedor.vb</DependentUpon>

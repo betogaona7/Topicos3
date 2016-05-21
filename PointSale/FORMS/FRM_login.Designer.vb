@@ -51,7 +51,7 @@ Partial Class FRM_login
         Me.LBL_usuario.Location = New System.Drawing.Point(411, 118)
         Me.LBL_usuario.Name = "LBL_usuario"
         Me.LBL_usuario.Size = New System.Drawing.Size(46, 13)
-        Me.LBL_usuario.TabIndex = 2
+        Me.LBL_usuario.TabIndex = 4
         Me.LBL_usuario.Text = "Usuario:"
         '
         'LBL_password
@@ -60,7 +60,7 @@ Partial Class FRM_login
         Me.LBL_password.Location = New System.Drawing.Point(411, 194)
         Me.LBL_password.Name = "LBL_password"
         Me.LBL_password.Size = New System.Drawing.Size(56, 13)
-        Me.LBL_password.TabIndex = 3
+        Me.LBL_password.TabIndex = 5
         Me.LBL_password.Text = "Password:"
         '
         'BTN_inciaSesion
@@ -68,8 +68,8 @@ Partial Class FRM_login
         Me.BTN_inciaSesion.Location = New System.Drawing.Point(443, 267)
         Me.BTN_inciaSesion.Name = "BTN_inciaSesion"
         Me.BTN_inciaSesion.Size = New System.Drawing.Size(98, 23)
-        Me.BTN_inciaSesion.TabIndex = 4
-        Me.BTN_inciaSesion.Text = "Iniciar sesion"
+        Me.BTN_inciaSesion.TabIndex = 2
+        Me.BTN_inciaSesion.Text = "&Iniciar sesion"
         Me.BTN_inciaSesion.UseVisualStyleBackColor = True
         '
         'BTN_salir
@@ -77,8 +77,8 @@ Partial Class FRM_login
         Me.BTN_salir.Location = New System.Drawing.Point(443, 307)
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(98, 23)
-        Me.BTN_salir.TabIndex = 5
-        Me.BTN_salir.Text = "Salir"
+        Me.BTN_salir.TabIndex = 3
+        Me.BTN_salir.Text = "&Salir"
         Me.BTN_salir.UseVisualStyleBackColor = True
         '
         'FRM_login

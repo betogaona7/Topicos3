@@ -33,7 +33,7 @@ Partial Class FRM_buscaArticulo
         'DGV_bArticulo
         '
         Me.DGV_bArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_bArticulo.Location = New System.Drawing.Point(106, 147)
+        Me.DGV_bArticulo.Location = New System.Drawing.Point(106, 128)
         Me.DGV_bArticulo.Name = "DGV_bArticulo"
         Me.DGV_bArticulo.Size = New System.Drawing.Size(728, 312)
         Me.DGV_bArticulo.TabIndex = 0
@@ -51,7 +51,7 @@ Partial Class FRM_buscaArticulo
         Me.BTN_filtrar.Name = "BTN_filtrar"
         Me.BTN_filtrar.Size = New System.Drawing.Size(75, 23)
         Me.BTN_filtrar.TabIndex = 2
-        Me.BTN_filtrar.Text = "Filtrar"
+        Me.BTN_filtrar.Text = "&Filtrar"
         Me.BTN_filtrar.UseVisualStyleBackColor = True
         '
         'BTN_salir
@@ -60,7 +60,7 @@ Partial Class FRM_buscaArticulo
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(75, 23)
         Me.BTN_salir.TabIndex = 3
-        Me.BTN_salir.Text = "Salir"
+        Me.BTN_salir.Text = "&Salir"
         Me.BTN_salir.UseVisualStyleBackColor = True
         '
         'Label1
@@ -68,9 +68,9 @@ Partial Class FRM_buscaArticulo
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(103, 89)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 13)
+        Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Articulo"
+        Me.Label1.Text = "Articulo:"
         '
         'FRM_buscaArticulo
         '

@@ -35,9 +35,9 @@ Partial Class FRM_buscaProveedor
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(127, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 13)
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Proveedor"
+        Me.Label1.Text = "Proveedor:"
         '
         'BTN_salir
         '
@@ -45,7 +45,7 @@ Partial Class FRM_buscaProveedor
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(75, 23)
         Me.BTN_salir.TabIndex = 8
-        Me.BTN_salir.Text = "Salir"
+        Me.BTN_salir.Text = "&Salir"
         Me.BTN_salir.UseVisualStyleBackColor = True
         '
         'BTN_filtrar
@@ -54,7 +54,7 @@ Partial Class FRM_buscaProveedor
         Me.BTN_filtrar.Name = "BTN_filtrar"
         Me.BTN_filtrar.Size = New System.Drawing.Size(75, 23)
         Me.BTN_filtrar.TabIndex = 7
-        Me.BTN_filtrar.Text = "Filtrar"
+        Me.BTN_filtrar.Text = "&Filtrar"
         Me.BTN_filtrar.UseVisualStyleBackColor = True
         '
         'TXT_proveedor
