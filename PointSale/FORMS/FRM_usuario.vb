@@ -106,7 +106,7 @@
                 MsgBox("Registro " & Me.TXT_id.Text & " Dado de Alta ", MsgBoxStyle.Information, "Aviso")
             Else
                 Me.mUsuario.UpdateDB()
-                MsgBox("Registro" & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
+                MsgBox("Registro " & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
             End If
         End If
         Me.Limpiar()
@@ -127,15 +127,15 @@
                 If Me.mUsuario.Activo = 0 Then
                     If MsgBox("El Registro Esta Cancelado Desea Activarlo", vbYesNo, "Confirmar ") = vbYes Then
                         Me.mUsuario.UpdCancela(1)
-                        MsgBox("Reactivacion Correcta", MsgBoxStyle.Information, "Aviso")
+                        MsgBox("Reactivación Correcta", MsgBoxStyle.Information, "Aviso")
                     End If
                 Else
                     Me.mUsuario.UpdCancela(0)
-                    MsgBox("Cancelacion Correcta", MsgBoxStyle.Information, "Aviso")
+                    MsgBox("Cancelación Correcta", MsgBoxStyle.Information, "Aviso")
                 End If
             End If
         Else
-            MsgBox("Favor De Seleccionar Un Registo", MsgBoxStyle.Information, "Aviso")
+            MsgBox("Favor De Seleccionar Un Registro", MsgBoxStyle.Information, "Aviso")
         End If
         Me.Limpiar()
         Me.dgFormat()
@@ -152,6 +152,27 @@
         Me.Close()
     End Sub
 
+    'Reporte
+    Private Sub BTN_reporte_Click(sender As System.Object, e As System.EventArgs) Handles BTN_reporte.Click
+        Dim dtDatos As New DataTable
+        ''lleno el data table
+        dtDatos = Me.mUsuario.Rpt(0)
+        If dtDatos.Rows.Count <> 0 Then
+            ''asigno el nombre del reporte
+            Dim orptprueba As New RPT_usuario()
+            ''le paso al reporte el data table
+            orptprueba.SetDataSource(dtDatos)
+            ''llamo reporte
+            Dim m As New FRM_reporte
+            m.CrystalReportViewer1.ReportSource = orptprueba
+            m.ShowDialog()
+            ''fin codigo nvo
+        Else
+            MsgBox("No se Encontro Información para Imprimir.. gracias.", MsgBoxStyle.OkOnly)
+        End If
+        Me.Limpiar()
+        Me.TXT_id.Focus()
+    End Sub
 #End Region
 
 #Region "Grid"
@@ -159,13 +180,6 @@
     Private Sub dgFormat()
         Me.DGV_usuario.DataSource = Me.mUsuario.Fill_Grid()
         Me.DGV_usuario.Refresh()
-        'Me.dg1.Columns(0).HeaderText = "Id"
-        'Me.dg1.Columns(1).HeaderText = "Nombre"
-        'Me.dg1.Columns(0).Visible = False
-        'Me.dg1.Columns(0).Width = 30
-        'Me.dg1.Columns(1).Width = 220
-        'Me.dg1.Columns(2).Visible = False
-        'Me.dg1.Columns(7).Visible = False
         DGV_usuario.Focus()
     End Sub
 

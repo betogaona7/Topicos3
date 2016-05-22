@@ -36,6 +36,7 @@ Partial Class FRM_usuario
         Me.LBL_password = New System.Windows.Forms.Label()
         Me.LBL_nombre = New System.Windows.Forms.Label()
         Me.LBL_login = New System.Windows.Forms.Label()
+        Me.BTN_reporte = New System.Windows.Forms.Button()
         CType(Me.DGV_usuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,10 +60,10 @@ Partial Class FRM_usuario
         'BTN_salir
         '
         Me.BTN_salir.BackColor = System.Drawing.Color.DimGray
-        Me.BTN_salir.Location = New System.Drawing.Point(786, 343)
+        Me.BTN_salir.Location = New System.Drawing.Point(786, 394)
         Me.BTN_salir.Name = "BTN_salir"
         Me.BTN_salir.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_salir.TabIndex = 13
+        Me.BTN_salir.TabIndex = 14
         Me.BTN_salir.Text = "&Salir"
         Me.BTN_salir.UseVisualStyleBackColor = False
         '
@@ -102,7 +103,7 @@ Partial Class FRM_usuario
         '
         'TXT_password
         '
-        Me.TXT_password.Location = New System.Drawing.Point(779, 67)
+        Me.TXT_password.Location = New System.Drawing.Point(786, 67)
         Me.TXT_password.MaxLength = 10
         Me.TXT_password.Name = "TXT_password"
         Me.TXT_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -139,9 +140,9 @@ Partial Class FRM_usuario
         Me.LBL_password.AutoSize = True
         Me.LBL_password.Location = New System.Drawing.Point(717, 70)
         Me.LBL_password.Name = "LBL_password"
-        Me.LBL_password.Size = New System.Drawing.Size(56, 13)
+        Me.LBL_password.Size = New System.Drawing.Size(64, 13)
         Me.LBL_password.TabIndex = 8
-        Me.LBL_password.Text = "Password:"
+        Me.LBL_password.Text = "Contraseña:"
         '
         'LBL_nombre
         '
@@ -161,12 +162,22 @@ Partial Class FRM_usuario
         Me.LBL_login.TabIndex = 7
         Me.LBL_login.Text = "Usuario:"
         '
+        'BTN_reporte
+        '
+        Me.BTN_reporte.Location = New System.Drawing.Point(786, 343)
+        Me.BTN_reporte.Name = "BTN_reporte"
+        Me.BTN_reporte.Size = New System.Drawing.Size(75, 23)
+        Me.BTN_reporte.TabIndex = 13
+        Me.BTN_reporte.Text = "&Reporte"
+        Me.BTN_reporte.UseVisualStyleBackColor = True
+        '
         'FRM_usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SpringGreen
         Me.ClientSize = New System.Drawing.Size(984, 471)
+        Me.Controls.Add(Me.BTN_reporte)
         Me.Controls.Add(Me.LBL_login)
         Me.Controls.Add(Me.LBL_nombre)
         Me.Controls.Add(Me.LBL_password)
@@ -203,4 +214,5 @@ Partial Class FRM_usuario
     Friend WithEvents LBL_password As System.Windows.Forms.Label
     Friend WithEvents LBL_nombre As System.Windows.Forms.Label
     Friend WithEvents LBL_login As System.Windows.Forms.Label
+    Friend WithEvents BTN_reporte As System.Windows.Forms.Button
 End Class

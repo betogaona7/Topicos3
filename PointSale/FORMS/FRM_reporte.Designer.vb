@@ -44,6 +44,7 @@ Partial Class FRM_reporte
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "FRM_reporte"
         Me.Text = "Reporte"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub

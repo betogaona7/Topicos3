@@ -122,7 +122,7 @@
                 MsgBox("Registro " & Me.TXT_id.Text & " Dado de Alta ", MsgBoxStyle.Information, "Aviso")
             Else
                 Me.mArticulo.UpdateDB()
-                MsgBox("Registro" & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
+                MsgBox("Registro " & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
             End If
         End If
         Me.Limpiar()
@@ -140,19 +140,19 @@
         If Me.TXT_id.Text <> "" Then
             Me.mArticulo.IdArticulo = CInt(Me.TXT_id.Text)
             Me.mArticulo.GetDB()
-            If MsgBox("Desea Eliminar El Registro " & Me.TXT_codigo.Text, vbYesNo, "Confirmar") = vbYes Then
+            If MsgBox("Desea Eliminar El Registro " & Me.TXT_codigo.Text, vbYesNo, " Confirmar") = vbYes Then
                 If Me.mArticulo.Activo = 0 Then
-                    If MsgBox("El Registro Esta Cancelado Desea Activarlo", vbYesNo, "Confirmar ") = vbYes Then
+                    If MsgBox("El Registro Esta Cancelado Desea Activarlo", vbYesNo, " Confirmar ") = vbYes Then
                         Me.mArticulo.UpdCancela(1)
-                        MsgBox("Reactivacion Correcta", MsgBoxStyle.Information, "Aviso")
+                        MsgBox("Reactivación Correcta", MsgBoxStyle.Information, "Aviso")
                     End If
                 Else
                     Me.mArticulo.UpdCancela(0)
-                    MsgBox("Cancelacion Correcta", MsgBoxStyle.Information, "Aviso")
+                    MsgBox("Cancelación Correcta", MsgBoxStyle.Information, "Aviso")
                 End If
             End If
         Else
-            MsgBox("Favor De Seleccionar Un Registo", MsgBoxStyle.Information, "Aviso")
+            MsgBox("Favor De Seleccionar Un Registro", MsgBoxStyle.Information, "Aviso")
         End If
         Me.Limpiar()
         Me.dgFormat()
@@ -181,7 +181,7 @@
             m.ShowDialog()
             ''fin codigo nvo
         Else
-            MsgBox("No se Encontro Informacion para Imprimir.. gracias.", MsgBoxStyle.OkOnly)
+            MsgBox("No se Encontro Información para Imprimir.. gracias.", MsgBoxStyle.OkOnly)
         End If
         Me.Limpiar()
         Me.TXT_id.Focus()

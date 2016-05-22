@@ -61,9 +61,9 @@ Partial Class FRM_login
         Me.LBL_password.AutoSize = True
         Me.LBL_password.Location = New System.Drawing.Point(411, 194)
         Me.LBL_password.Name = "LBL_password"
-        Me.LBL_password.Size = New System.Drawing.Size(56, 13)
+        Me.LBL_password.Size = New System.Drawing.Size(64, 13)
         Me.LBL_password.TabIndex = 3
-        Me.LBL_password.Text = "Password:"
+        Me.LBL_password.Text = "Contraseña:"
         '
         'BTN_inciaSesion
         '

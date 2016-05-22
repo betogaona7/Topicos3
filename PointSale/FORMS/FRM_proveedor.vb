@@ -171,7 +171,7 @@
                 MsgBox("Registro " & Me.TXT_id.Text & " Dado de Alta ", MsgBoxStyle.Information, "Aviso")
             Else
                 Me.mProveedor.UpdateDB()
-                MsgBox("Registro" & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
+                MsgBox("Registro " & Me.TXT_id.Text & " Actualizado ", MsgBoxStyle.Information, "Aviso")
             End If
         End If
         Me.Limpia()
@@ -194,11 +194,11 @@
                 If Me.mProveedor.Activo = 0 Then
                     If MsgBox("El Registro Esta Cancelado Desea Activarlo", vbYesNo, "Confirmar ") = vbYes Then
                         Me.mProveedor.UpdCancela(1)
-                        MsgBox("Reactivacion Correcta", MsgBoxStyle.Information, "Aviso")
+                        MsgBox("Reactivación Correcta", MsgBoxStyle.Information, "Aviso")
                     End If
                 Else
                     Me.mProveedor.UpdCancela(0)
-                    MsgBox("Cancelacion Correcta", MsgBoxStyle.Information, "Aviso")
+                    MsgBox("Cancelación Correcta", MsgBoxStyle.Information, "Aviso")
                 End If
             End If
         Else
@@ -230,7 +230,7 @@
             m.ShowDialog()
             ''fin codigo nvo
         Else
-            MsgBox("No se Encontro Informacion para Imprimir.. gracias.", MsgBoxStyle.OkOnly)
+            MsgBox("No se Encontro Información para Imprimir.. gracias.", MsgBoxStyle.OkOnly)
         End If
         Me.Limpia()
         Me.TXT_id.Focus()
