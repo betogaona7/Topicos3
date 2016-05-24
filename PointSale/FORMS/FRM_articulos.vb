@@ -35,7 +35,7 @@
     Private Sub TXT_id_Validated(sender As Object, e As System.EventArgs) Handles TXT_id.Validated
         If Me.TXT_id.Text <> "" And bnuevo <> True Then
             Me.mArticulo.IdArticulo = CInt(Me.TXT_id.Text)
-            If Me.mArticulo.GetDB() Then
+            If Me.mArticulo.GetDB(0) Then
                 Me.TXT_id.Text = Me.mArticulo.IdArticulo
                 Me.TXT_codigo.Text = Me.mArticulo.Codigo
                 Me.TXT_descripcion.Text = Me.mArticulo.Descripcion
@@ -139,7 +139,7 @@
     Private Sub BTN_eliminar_Click(sender As System.Object, e As System.EventArgs) Handles BTN_eliminar.Click
         If Me.TXT_id.Text <> "" Then
             Me.mArticulo.IdArticulo = CInt(Me.TXT_id.Text)
-            Me.mArticulo.GetDB()
+            Me.mArticulo.GetDB(0)
             If MsgBox("Desea Eliminar El Registro " & Me.TXT_codigo.Text, vbYesNo, " Confirmar") = vbYes Then
                 If Me.mArticulo.Activo = 0 Then
                     If MsgBox("El Registro Esta Cancelado Desea Activarlo", vbYesNo, " Confirmar ") = vbYes Then
@@ -195,7 +195,7 @@
 
 #Region "Grid"
     Private Sub dgFormat()
-        Me.DGV_articulo.DataSource = Me.mArticulo.Fill_Grid()
+        Me.DGV_articulo.DataSource = Me.mArticulo.Fill_Grid(0, "")
         Me.DGV_articulo.Refresh()
         DGV_articulo.Focus()
     End Sub

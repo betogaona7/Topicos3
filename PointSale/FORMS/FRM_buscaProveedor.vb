@@ -22,10 +22,10 @@
         Me.DGV_bProveedor.Columns(3).HeaderText = "Numero"
         Me.DGV_bProveedor.Columns(4).HeaderText = "Colonia"
         Me.DGV_bProveedor.Columns(5).HeaderText = "Estado"
-        Me.DGV_bProveedor.Columns(6).HeaderText = "Municipio"
-        Me.DGV_bProveedor.Columns(7).HeaderText = "Ciudad"
-        Me.DGV_bProveedor.Columns(8).HeaderText = "Codigo P"
-        Me.DGV_bProveedor.Columns(9).HeaderText = "Activo"
+        Me.DGV_bProveedor.Columns(6).HeaderText = "Ciudad"
+        Me.DGV_bProveedor.Columns(7).HeaderText = "Codigo P"
+        Me.DGV_bProveedor.Columns(8).HeaderText = "Activo"
+
         Me.DGV_bProveedor.Columns(0).Visible = False
         Me.DGV_bProveedor.Columns(1).Width = 150
         Me.DGV_bProveedor.Columns(2).Width = 100
@@ -60,6 +60,8 @@
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
             SendKeys.Send("{TAB}")
+        Else
+            e.Handled = mGeneral.ValidaMayusculas(e.KeyChar)
         End If
     End Sub
 #End Region

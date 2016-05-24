@@ -46,7 +46,7 @@
         Me.DGV_orden.DataSource = DTG
         Me.DGV_orden.Columns(0).HeaderText = "Codigo"
         Me.DGV_orden.Columns(1).HeaderText = "Descripcion"
-        Me.DGV_orden.Columns(2).HeaderText = "Cantidad"
+        Me.DGV_orden.Columns(2).HeaderText = "Cant"
         Me.DGV_orden.Columns(3).HeaderText = "Precio"
         Me.DGV_orden.Columns(4).HeaderText = "Importe"
         Me.DGV_orden.Columns(5).HeaderText = "IdArticulo"
@@ -93,10 +93,12 @@
     'F2_rfc
     Private Sub BTN_F2rfc_Click(sender As System.Object, e As System.EventArgs) Handles BTN_F2rfc.Click
         GIdCliente = 0
+        FRM_buscaProveedor.Dock = DockStyle.Fill
         FRM_buscaProveedor.ShowDialog()
+        'FRM_buscaProveedor.ShowDialog()
         If GIdCliente <> 0 Then
             Me.mProveedor.IdProveedor = GIdCliente
-            If Me.mProveedor.GetDB() Then
+            If Me.mProveedor.GetDB(0) Then
                 Me.pasadatos()
                 Me.TXT_codigo.Focus()
             End If
@@ -111,11 +113,14 @@
         FRM_buscaArticulo.ShowDialog()
         If GIdArticulo <> 0 Then
             Me.mArticulo.IdArticulo = GIdArticulo
-            If Me.mArticulo.GetDB() Then
+            If Me.mArticulo.GetDB(0) Then
                 Me.TXT_codigo.Text = Me.mArticulo.Codigo
                 Me.TXT_descripcion.Text = Me.mArticulo.Descripcion
                 Me.TXT_precio.Text = Me.mArticulo.Precio
+                Me.TXT_cantidad.Focus()
             End If
+        Else
+            Me.TXT_codigo.Focus()
         End If
     End Sub
 
@@ -212,21 +217,21 @@
     End Function
 
     Private Sub SumGrid()
-        Me.TXT_total.Text = 0.0
-        Me.TXT_descuento.Text = 0.0
         Me.TXT_subtotal.Text = 0.0
+        Me.TXT_iva.Text = 0.0
+        Me.TXT_total.Text = 0.0
         Me.WtxtTotal = 0.0
         Me.WtxtIva = 0.0
         Me.WtxtTotalOrd = 0.0
         For Each row As DataGridViewRow In Me.DGV_orden.Rows
-            Me.TXT_total.Text = Val(Me.TXT_total.Text) + row.Cells(4).Value
-            Me.WtxtTotal = Val(Me.TXT_total.Text) + row.Cells(4).Value
+            Me.TXT_subtotal.Text = Val(Me.TXT_subtotal.Text) + row.Cells(4).Value
+            Me.WtxtTotal = Val(Me.WtxtTotal) + row.Cells(4).Value
         Next
-        Me.TXT_descuento.Text = ((Val(Me.WtxtTotal) - (Val(Me.WtxtDescuento))) * Val(wIVA)) / 100
+        Me.TXT_iva.Text = ((Val(Me.WtxtTotal) - (Val(Me.WtxtDescuento))) * Val(wIVA)) / 100
         Me.WtxtIva = ((Val(Me.WtxtTotal) - (Val(Me.WtxtDescuento))) * Val(wIVA)) / 100
         Me.TXT_total.Text = (Val(Me.WtxtTotal) - (Val(Me.WtxtDescuento))) + Val(Me.TXT_descuento.Text)
         Me.WtxtTotalOrd = (Val(Me.WtxtTotal) - (Val(Me.WtxtDescuento))) + Val(Me.TXT_descuento.Text)
-        Me.TXT_descuento.Text = FormatNumber(Me.TXT_descuento.Text, 2)
+        Me.TXT_iva.Text = FormatNumber(Me.TXT_iva.Text, 2)
         Me.TXT_total.Text = FormatNumber(Me.TXT_total.Text, 2)
     End Sub
 
@@ -238,9 +243,9 @@
             Row("COD") = Me.TXT_codigo.Text
             Row("DES") = Me.TXT_descripcion.Text
             Row("CANT") = Me.TXT_cantidad.Text
-            Row("PRECIO") = Me.TXT_precio.Text
+            Row("PRECIO") = Val(Me.TXT_precio.Text)
             wImporte = (Val(Me.TXT_precio.Text) * Val(Me.TXT_cantidad.Text))
-            Row("IMPORTE") = Me.TXT_importe.Text
+            Row("IMPORTE") = wImporte
             Row("IDARTICULO") = Me.mArticulo.IdArticulo
             DTG.Rows.Add(Row)
             dgFormat()
@@ -263,28 +268,50 @@
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
             SendKeys.Send("{TAB}")
+        Else
+            e.Handled = mGeneral.ValidaMayusculas(e.KeyChar)
         End If
     End Sub
 
     Private Sub TXT_rfc_Validated(sender As Object, e As System.EventArgs) Handles TXT_rfc.Validated
         If Me.TXT_rfc.Text <> "" Then
             Me.mProveedor.RFC = Me.TXT_rfc.Text
-            If Me.mProveedor.GetDB() Then
+            If Me.mProveedor.GetDB(1) Then
                 Me.pasadatos()
                 Me.TXT_codigo.Focus()
             End If
         End If
     End Sub
 
+    Private Sub TXT_codigo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_codigo.KeyPress
+        e.KeyChar = UCase(e.KeyChar)
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True
+            SendKeys.Send("{TAB}")
+        Else
+            e.Handled = mGeneral.ValidaMayusculas(e.KeyChar)
+        End If
+    End Sub
+
     Private Sub TXT_codigo_Validated(sender As Object, e As System.EventArgs) Handles TXT_codigo.Validated
         If Me.TXT_codigo.Text <> "" Then
             Me.mArticulo.Codigo = Me.TXT_codigo.Text
-            If Me.mArticulo.GetDB() Then
+            If Me.mArticulo.GetDB(1) Then
                 Me.PasaArticulo()
                 Me.TXT_cantidad.Focus()
             End If
             MsgBox("Codigo no Existe...", MsgBoxStyle.OkOnly)
             Me.TXT_codigo.Focus()
+        End If
+    End Sub
+
+    Private Sub TXT_cantidad_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_cantidad.KeyPress
+        e.KeyChar = UCase(e.KeyChar)
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True
+            SendKeys.Send("{TAB}")
+        Else
+            e.Handled = mGeneral.ValidaNumero(e.KeyChar)
         End If
     End Sub
 
@@ -298,7 +325,7 @@
     End Sub
 
     Private Sub TXT_descuento_Validated(sender As Object, e As System.EventArgs) Handles TXT_descuento.Validated
-        If Val(Me.TXT_descuento.Text) > Val(Me.TXT_total.Text) Then
+        If Val(Me.TXT_descuento.Text) > Val(Me.TXT_subtotal.Text) Then
             MsgBox("!! ojo bonificacion no puede ser mayor al importe de la orden !! ... ( !", MsgBoxStyle.OkOnly)
             Me.TXT_descuento.Focus()
         End If

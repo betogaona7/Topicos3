@@ -85,6 +85,7 @@ Partial Class FRM_buscaArticulo
         Me.Controls.Add(Me.DGV_bArticulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_buscaArticulo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FRM_buscaArticulo"
         CType(Me.DGV_bArticulo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

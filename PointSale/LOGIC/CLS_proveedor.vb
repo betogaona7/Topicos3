@@ -150,10 +150,37 @@
     '''''''''''''''''''''''''''''''''''''''''''
 
     'Consulta en la base de datos si el registro existe y llena la clase'
-    Function GetDB() As Boolean
-        StrSql = "SELECT IdProveedor, Nombre, RFC, Calle, Numero, Colonia, Estado, Ciudad, CodigoPostal, Activo "
+    'Function GetDB() As Boolean
+    '   StrSql = "SELECT IdProveedor, Nombre, RFC, Calle, Numero, Colonia, Estado, Ciudad, CodigoPostal, Activo "
+    '  StrSql = StrSql & " FROM " & N_Tabla
+    ' StrSql = StrSql & " WHERE IdProveedor=" & _IdProveedor
+    ''GetDB = False
+    'xDT = xCnx.DTQuery(StrSql)
+    'If xDT.Rows.Count = 1 Then
+    '   GetDB = True
+    '   _IdProveedor = CInt(xDT.Rows(0)("IdProveedor"))
+    '  _Nombre = CStr(xDT.Rows(0)("Nombre"))
+    ' _RFC = CStr(xDT.Rows(0)("RFC"))
+    '_Calle = CStr(xDT.Rows(0)("Calle"))
+    '_Numero = CInt(xDT.Rows(0)("Numero"))
+    '_Colonia = CStr(xDT.Rows(0)("Colonia"))
+    '_Estado = CStr(xDT.Rows(0)("Estado"))
+    '_Ciudad = CStr(xDT.Rows(0)("Ciudad"))
+    '_CodigoPostal = CStr(xDT.Rows(0)("CodigoPostal"))
+    '_Activo = CInt(xDT.Rows(0)("Activo"))
+    'End If
+    'End Function
+    Function GetDB(ByVal mbusca As Integer) As Boolean
+        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,"
+        StrSql = StrSql & " Estado,Ciudad,CodigoPostal,Activo"
         StrSql = StrSql & " FROM " & N_Tabla
-        StrSql = StrSql & " WHERE IdProveedor=" & _IdProveedor
+        StrSql = StrSql & " WHERE "
+        If mbusca = 0 Then
+            StrSql = StrSql & "  IdProveedor=" & _IdProveedor
+        End If
+        If mbusca = 1 Then
+            StrSql = StrSql & "  RFC='" & _RFC & "'"
+        End If
         GetDB = False
         xDT = xCnx.DTQuery(StrSql)
         If xDT.Rows.Count = 1 Then
@@ -200,11 +227,25 @@
         End If
     End Function
 
-    Function Fill_Grid() As Object
-        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,Estado,Ciudad,CodigoPostal, "
-        StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then "
-        StrSql = StrSql & " 'Baja' end Activo"
-        StrSql = StrSql & " FROM " & N_Tabla
+    'Function Fill_Grid() As Object
+    '   StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,Estado,Ciudad,CodigoPostal, "
+    '  StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then "
+    ' StrSql = StrSql & " 'Baja' end Activo"
+    'StrSql = StrSql & " FROM " & N_Tabla
+    'Fill_Grid = xCnx.DTQuery(StrSql)
+    'End Function
+
+    Function Fill_Grid(ByVal mBusca As Integer) As Object
+        StrSql = "SELECT IdProveedor,Nombre,RFC,Calle,Numero,Colonia,"
+        StrSql = StrSql & " Estado,Ciudad,CodigoPostal,"
+        StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then 'Baja' end Activo"
+        StrSql = StrSql & "  FROM " & N_Tabla
+        If mBusca = 1 Then
+            StrSql = StrSql & " where RFC like '%" & _RFC & "%'"
+        End If
+        If mBusca = 2 Then
+            StrSql = StrSql & " where Nombre like '%" & _Nombre & "%'"
+        End If
         Fill_Grid = xCnx.DTQuery(StrSql)
     End Function
 

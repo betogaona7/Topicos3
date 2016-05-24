@@ -108,7 +108,6 @@
             _Impuesto = value
         End Set
     End Property
-
     'Total'
     Public Property Total() As Double
         Get
@@ -267,7 +266,7 @@
         _Folio = "A" & xCnx.ScalarQuery(StrSql)
     End Sub '
 
-    'Insertar nueva factura
+    'Insertar nueva orden
     Public Sub insertDB()
         ''Inserta encabezado
         Me.New_IdOrden()
@@ -290,8 +289,8 @@
         StrSql = "INSERT INTO OdeCDetalle (IdOdeCDetalle,IdOdeC,IdArticulo,"
         StrSql = StrSql & " Cantidad, Precio, Concepto) "
         StrSql = StrSql & " VALUES(" & _IdOrdenDetalle & "," & _IdOrden & ","
-        StrSql = StrSql & _IdArticulo & "," & _Cantidad & ",'" & _Precio & "'," & _Concepto
-        StrSql = StrSql & ")"
+        StrSql = StrSql & _IdArticulo & "," & _Cantidad & "," & _Precio & ",'" & _Concepto
+        StrSql = StrSql & "')"
         xCnx.NonQuery(StrSql)
     End Sub
 
@@ -299,7 +298,7 @@
     Public Sub UpdateDBCancela()
         StrSql = "UPDATE " & N_Tabla
         StrSql = StrSql & " set Cancela = " & _Cancela
-        StrSql = StrSql & ", ctefacfechaCan = getdate()"   'No se de donde sale CTEFACFECHACAN
+        StrSql = StrSql & ", cteordfechaCan = getdate()"   'No se de donde sale CTEFACFECHACAN
         StrSql = StrSql & "  WHERE IdOdeC=" & _IdOrden
         xCnx.NonQuery(StrSql)
     End Sub
@@ -399,8 +398,8 @@
             StrSql = StrSql & " and F.Folio='" & MFolio & "'"
         End If
         If MCancela = 2 And mIdcliente <> 0 Then
-            StrSql = StrSql & " F.ctefacCancelada=0  "     ' No de donde sale CTEFACCACELADA
-            StrSql = StrSql & " AND F.CteFacSaldo > 1"     ' No se de donde sale CTEFACTSALDO
+            StrSql = StrSql & " F.cteordCancelada=0  "     ' No de donde sale CTEFACCACELADA
+            StrSql = StrSql & " AND F.CteOrdTotal > 1"     ' No se de donde sale CTEFACTSALDO
             StrSql = StrSql & " AND F.IdProveedor=" & mIdcliente
         End If
         Fill_Grid_Orden = xCnx.DTQuery(StrSql)
@@ -417,17 +416,17 @@
     End Function
 
     'Regresa proveedores que se facturo en rango de fechas
-    Function FillG_CteOrde(ByVal mFI As String, ByVal mFF As String) As Object
+    Function FillG_CteOrd(ByVal mFI As String, ByVal mFF As String) As Object
         StrSql = " "
-        StrSql = "SELECT A.IdProveedor,(SELECT Nombre FROM Proveedor WHERE IdProveedor=A.IdProveedor) Nombre"
-        StrSql = StrSql & ",round(sum(A.Importe),2) Importe,COUNT(A.IdFactura) nFact"
-        StrSql = StrSql & ",round(sum(A.Importe)/COUNT(A.IdCteFactura),2) Prom "
+        StrSql = "SELECT A.IdProveedor,(SELECT cteNombre FROM Proveedor WHERE IdProveedor=A.IdProveedor) Nombre"
+        StrSql = StrSql & ",round(sum(A.SubTotal),2) SubTotal,COUNT(A.IdOdeC) nOrde"
+        StrSql = StrSql & ",round(sum(A.SubTotal)/COUNT(A.IdCteOrden),2) Prom "
         StrSql = StrSql & " FROM  OdeC A "
         StrSql = StrSql & " INNER JOIN Proveedor C ON C.IdProveedor = A.IdProveedor"
-        StrSql = StrSql & " WHERE A.ctefacCancelada=0 and A.ctefacFecha BETWEEN "                           'No se de donde sale CTEFACCANCELADA y CTEFACFECHA
+        StrSql = StrSql & " WHERE A.cteordCancelada=0 and A.cteordFecha BETWEEN "                           'No se de donde sale CTEFACCANCELADA y CTEFACFECHA
         StrSql = StrSql & " CONVERT(datetime,'" & mFI & "',103) AND  CONVERT(datetime,'" & mFF & "',103) "
         StrSql = StrSql & " GROUP BY A.IdProveedor ORDER BY A.IdProveedor "
-        FillG_CteOrde = xCnx.DTQuery(StrSql)
+        FillG_CteOrd = xCnx.DTQuery(StrSql)
     End Function
 
     'Proceso de orden
@@ -439,9 +438,9 @@
             row = _WDTDetalle.Rows(Me.i)
             '' paso las variables del datatable 
             ' inserto prefactura detalle
-            _Cantidad = row("Cantidad").ToString
+            _Cantidad = row("Cant").ToString
             _Precio = row("Precio").ToString
-            _Concepto = row("Descuento").ToString
+            _Concepto = row("Des").ToString
             _IdArticulo = row("IdArticulo").ToString
             Me.insertDBDetalle()
         Next

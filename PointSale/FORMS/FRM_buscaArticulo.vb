@@ -20,7 +20,8 @@
         Me.DGV_bArticulo.Columns(2).HeaderText = "Descripcion"
         Me.DGV_bArticulo.Columns(3).HeaderText = "Precio"
         Me.DGV_bArticulo.Columns(4).HeaderText = "Costo"
-        Me.DGV_bArticulo.Columns(9).HeaderText = "Activo"
+        Me.DGV_bArticulo.Columns(5).HeaderText = "Activo"
+
         Me.DGV_bArticulo.Columns(0).Visible = False
         Me.DGV_bArticulo.Columns(1).Width = 50
         Me.DGV_bArticulo.Columns(2).Width = 150
@@ -55,6 +56,8 @@
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True
             SendKeys.Send("{TAB}")
+        Else
+            e.Handled = mGeneral.ValidaMayusculas(e.KeyChar)
         End If
     End Sub
 #End Region

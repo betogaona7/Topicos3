@@ -85,6 +85,7 @@ Partial Class FRM_buscaProveedor
         Me.Controls.Add(Me.DGV_bProveedor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRM_buscaProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FRM_buscaProveedor"
         CType(Me.DGV_bProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

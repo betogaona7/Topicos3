@@ -109,10 +109,16 @@
     '''''''''''''''''''''''''''''''''''''''''''
 
     'Consulta en la base de datos si el registro existe y llena la clase'
-    Function GetDB() As Boolean
+    Function GetDB(ByVal mBusca As Integer) As Boolean
         StrSql = "SELECT IdArticulo, Codigo, Descripcion, Precio, Costo, Activo "
+        StrSql = StrSql & " Activo"
         StrSql = StrSql & " FROM " & N_Tabla
-        StrSql = StrSql & " WHERE IdArticulo=" & _IdArticulo
+        If mBusca = 0 Then
+            StrSql = StrSql & " WHERE IdArticulo=" & _IdArticulo
+        End If
+        If mBusca = 1 Then
+            StrSql = StrSql & " WHERE Codigo='" & _Codigo & "'"
+        End If
         GetDB = False
         xDT = xCnx.DTQuery(StrSql)
         If xDT.Rows.Count = 1 Then
@@ -151,11 +157,21 @@
         End If
     End Function
 
-    Function Fill_Grid() As Object
+    'Function Fill_Grid() As Object
+    '   StrSql = "SELECT IdArticulo,Codigo,Descripcion,Precio,Costo, "
+    '  StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then "
+    ' StrSql = StrSql & " 'Baja' end Activo"
+    'StrSql = StrSql & " FROM " & N_Tabla
+    'Fill_Grid = xCnx.DTQuery(StrSql)
+    'End Function
+
+    Function Fill_Grid(ByVal mBusca As Integer, ByVal mBuscar As String) As Object
         StrSql = "SELECT IdArticulo,Codigo,Descripcion,Precio,Costo, "
-        StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then "
-        StrSql = StrSql & " 'Baja' end Activo"
-        StrSql = StrSql & " FROM " & N_Tabla
+        StrSql = StrSql & " case Activo when 1 then 'Activo' when 0 then 'Baja' end Activo"
+        StrSql = StrSql & "  FROM " & N_Tabla
+        If mBusca = 1 And mBuscar <> "" Then
+            StrSql = StrSql & "  Where Descripcion Like '%" & mBuscar & "%'"
+        End If
         Fill_Grid = xCnx.DTQuery(StrSql)
     End Function
 
