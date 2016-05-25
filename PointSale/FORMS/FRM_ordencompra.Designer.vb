@@ -108,6 +108,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_subtotal.Location = New System.Drawing.Point(739, 189)
         Me.TXT_subtotal.Name = "TXT_subtotal"
+        Me.TXT_subtotal.ReadOnly = True
         Me.TXT_subtotal.Size = New System.Drawing.Size(203, 20)
         Me.TXT_subtotal.TabIndex = 2
         '
@@ -115,6 +116,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_total.Location = New System.Drawing.Point(739, 267)
         Me.TXT_total.Name = "TXT_total"
+        Me.TXT_total.ReadOnly = True
         Me.TXT_total.Size = New System.Drawing.Size(203, 20)
         Me.TXT_total.TabIndex = 5
         '
@@ -122,6 +124,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_iva.Location = New System.Drawing.Point(739, 241)
         Me.TXT_iva.Name = "TXT_iva"
+        Me.TXT_iva.ReadOnly = True
         Me.TXT_iva.Size = New System.Drawing.Size(203, 20)
         Me.TXT_iva.TabIndex = 4
         '
@@ -247,6 +250,7 @@ Partial Class FRM_ordencompra
         Me.TXT_nombre.Location = New System.Drawing.Point(181, 43)
         Me.TXT_nombre.MaxLength = 100
         Me.TXT_nombre.Name = "TXT_nombre"
+        Me.TXT_nombre.ReadOnly = True
         Me.TXT_nombre.Size = New System.Drawing.Size(181, 20)
         Me.TXT_nombre.TabIndex = 1
         '
@@ -255,6 +259,7 @@ Partial Class FRM_ordencompra
         Me.TXT_calle.Location = New System.Drawing.Point(368, 43)
         Me.TXT_calle.MaxLength = 100
         Me.TXT_calle.Name = "TXT_calle"
+        Me.TXT_calle.ReadOnly = True
         Me.TXT_calle.Size = New System.Drawing.Size(182, 20)
         Me.TXT_calle.TabIndex = 2
         '
@@ -262,6 +267,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_numero.Location = New System.Drawing.Point(556, 43)
         Me.TXT_numero.Name = "TXT_numero"
+        Me.TXT_numero.ReadOnly = True
         Me.TXT_numero.Size = New System.Drawing.Size(82, 20)
         Me.TXT_numero.TabIndex = 3
         '
@@ -270,6 +276,7 @@ Partial Class FRM_ordencompra
         Me.TXT_colonia.Location = New System.Drawing.Point(644, 43)
         Me.TXT_colonia.MaxLength = 100
         Me.TXT_colonia.Name = "TXT_colonia"
+        Me.TXT_colonia.ReadOnly = True
         Me.TXT_colonia.Size = New System.Drawing.Size(210, 20)
         Me.TXT_colonia.TabIndex = 4
         '
@@ -369,6 +376,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_importe.Location = New System.Drawing.Point(644, 46)
         Me.TXT_importe.Name = "TXT_importe"
+        Me.TXT_importe.ReadOnly = True
         Me.TXT_importe.Size = New System.Drawing.Size(126, 20)
         Me.TXT_importe.TabIndex = 4
         '
@@ -383,6 +391,7 @@ Partial Class FRM_ordencompra
         '
         Me.TXT_precio.Location = New System.Drawing.Point(450, 46)
         Me.TXT_precio.Name = "TXT_precio"
+        Me.TXT_precio.ReadOnly = True
         Me.TXT_precio.Size = New System.Drawing.Size(100, 20)
         Me.TXT_precio.TabIndex = 2
         '
@@ -391,6 +400,7 @@ Partial Class FRM_ordencompra
         Me.TXT_descripcion.Location = New System.Drawing.Point(181, 46)
         Me.TXT_descripcion.MaxLength = 150
         Me.TXT_descripcion.Name = "TXT_descripcion"
+        Me.TXT_descripcion.ReadOnly = True
         Me.TXT_descripcion.Size = New System.Drawing.Size(263, 20)
         Me.TXT_descripcion.TabIndex = 1
         '
@@ -409,6 +419,7 @@ Partial Class FRM_ordencompra
         Me.LBL_fecha3.Size = New System.Drawing.Size(37, 13)
         Me.LBL_fecha3.TabIndex = 10
         Me.LBL_fecha3.Text = "Fecha"
+        Me.LBL_fecha3.Visible = False
         '
         'LBL_folio
         '
@@ -427,6 +438,7 @@ Partial Class FRM_ordencompra
         Me.LBL_fecha2.Size = New System.Drawing.Size(37, 13)
         Me.LBL_fecha2.TabIndex = 8
         Me.LBL_fecha2.Text = "Fecha"
+        Me.LBL_fecha2.Visible = False
         '
         'LBL_fecha1
         '
